@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "declaration": false,
+    "target": "es5",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "outDir": "built",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": ".",
+    "paths": {
+      "redux": ["./types/redux/"],
+      "src": ["./src"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "lib": ["dom", "es6", "es2017", "dom.iterable", "scripthost"]
+  },
+  "include": ["./src/**/*", "./tests/**/*"],
+  "exclude": ["node_modules", "build"]
+}
