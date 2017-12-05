@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js --inline --hot --content-base ./public",
-    "test:watch": "tsc | ava --watch",
+    "test:watch": "tsc --watch | ava --watch",
     "pretest": "rm -rf reports && mkdirp reports/unit & tsc",
     "test": "npm run test:unit && npm run test:coverage && npm run test:uitest",
     "test:unit": "ava | tap-that-html > reports/unit/index.html",
