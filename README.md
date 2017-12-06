@@ -37,7 +37,7 @@ UI Recorder 或 Nightwatch
 
 - AVA： 相对于 Mocha 执行更快，测试环境隔离、支持原子测试；相对于 Jest 组合更加灵活
 - Mocha + Chai：相对较为成熟
-- Jest：[Create React App](https://github.com/facebookincubator/create-react-app) 和 [Microsoft/TypeScript-React-Starter](Microsoft/TypeScript-React-Starter) 中内置的推荐方案，是个一体化方案
+- Jest：[Create React App](https://github.com/facebookincubator/create-react-app) 、 [Microsoft/TypeScript-React-Starter](Microsoft/TypeScript-React-Starter) 和 [Ant Design](https://github.com/ant-design/ant-design-pro) 中内置的推荐方案，是个一体化方案
 
 
 
