@@ -1,5 +1,7 @@
 # ava-testing
 
+> 最佳适用于 `TypeScript + Scss/Less + React + Redux +  React Dom + React Router + React Thunk` 技术栈的前端。
+
 一个针对 TypScript 源码的 React Redux 项目的模版项目。
 
 - 采用  React 和 TypeScript；
@@ -10,10 +12,10 @@
 
 1. React Redux 测试：typescript + ava + enzyme(sinon、redux-mock-store) 组合
 2. 覆盖率：nyc
-3. 集成测试： 
+3. 集成测试： UI Recorder 或 Nightwatch
 
 
-### 单元：React  + Redux
+### 组件：React  + Redux
 
 支持 watch 模式；原子测试
 
@@ -31,38 +33,33 @@
 
 UI Recorder 或 Nightwatch
 
-## 工具
+## 对比的一些工具
 
-- Mocha + Chai
-- Jest
-- AVA
+- AVA： 相对于 Mocha 执行更快，测试环境隔离、支持原子测试；相对于 Jest 组合更加灵活
+- Mocha + Chai：相对较为成熟
+- Jest：[Create React App](https://github.com/facebookincubator/create-react-app) 和 [Microsoft/TypeScript-React-Starter](Microsoft/TypeScript-React-Starter) 中内置的推荐方案，是个一体化方案
 
 
 
-| 测试工具类型                      | 选型                                     | 同类                                       |      |
-| --------------------------- | -------------------------------------- | ---------------------------------------- | ---- |
-| **environment**             |                                        | Jest、  Wallaby.js                        |      |
-| **testing structure**       |                                        | [cucumber-js](https://github.com/cucumber/cucumber-js) |      |
-| **assertions functions**    |                                        | [Unexpected](https://github.com/unexpectedjs/unexpected)、Chai |      |
-| **display, and watch**      |                                        | Jest                                     |      |
-| **snapshots**               | AVA                                    |                                          | 1    |
-| **mocks, spies, and stubs** | enzyme                                 | [testdouble.js](https://github.com/testdouble/testdouble.js) | 1    |
-| **code coverage**           | nyc                                    | [istanbul](https://github.com/gotwarlost/istanbul) | 1    |
-| e2e                         | [Nightwatch](http://nightwatchjs.org/) | [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/)，testcafe | 0.5  |
-|                             |                                        |                                          |      |
-| runner                      |                                        | [DalekJS](https://github.com/dalekjs)、UI Recorder |      |
-| 模拟浏览器 dom                   | JsDom                                  |                                          | 1    |
+| 测试工具类型                                   | 选型                                       | 同类                                       |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| **test runner**,**snapshots**,**display, and watch** | AVA                                      | Jest, Wallaby.js                         |
+| **assertions functions**                 | enzyme                                   | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai |
+| **mocks, spies, and stubs**              | sinon                                    | [testdouble.js](https://github.com/testdouble/testdouble.js) |
+| **code coverage**                        | [nyc](https://github.com/istanbuljs/nyc) |                                          |
+| **e2e**                                  | [Nightwatch](http://nightwatchjs.org/)、[UI Recorder](https://github.com/alibaba/uirecorder) | [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs) |
+| **模拟浏览器 dom**                            | JsDom                                    |                                          |
 
 ## 踩过的坑
 
-- package.json 中包依赖包版本锁定管理
-- ignore-styles 忽略
+- package.json 中包依赖版本锁定管理：不要忽略 warning，关注 [Enzyme Working with React 16](http://airbnb.io/enzyme/docs/installation/react-16.html) 等配置文档
+- ignore-styles 忽略样式和资源文件：需要 hook node 的 require， 因此将 setup.ts 改成 setup.js 
 
 ### API Docs
 
 - AVA: https://github.com/avajs/ava#api
 - Enzyme:  https://github.com/airbnb/enzyme/tree/master/docs/api
-- Test Renderer: https://doc.react-china.org/docs/test-renderer.html
+- Sinon：http://sinonjs.org/releases/v4.1.2/
 
 ## 参考
 
@@ -78,13 +75,12 @@ UI Recorder 或 Nightwatch
 
 ## 重点解答
 
-疑问：
-
 1. 常用组合和现在组合优缺点；
 2. 各组合适用的应用场景；
 3. 测试的开发体验。
 
 ### 未来的可能
 
-1. 更好的开发体验
-2. 低成本的测试用例的创建和维护方案
+1. 与测试团队整体测试的接入；
+2. 对开发者更加友好，降低用例的创建和维护成本；
+3. 从投入产出角度，减少人工干预环节。
