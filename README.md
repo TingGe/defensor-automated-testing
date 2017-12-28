@@ -1,4 +1,4 @@
-# ava-testing
+# 基于 ava 的组件级测试
 
 > 最佳适用于 `TypeScript + Scss/Less + React + Redux +  React Dom + React Router + React Thunk` 技术栈的前端。
 
