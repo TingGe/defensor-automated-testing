@@ -35,8 +35,6 @@ UI Recorder 或 Nightwatch
 
 ## 对比的一些工具
 
-> [JavaScript unit testing frameworks: Comparing Jasmine, Mocha, AVA, Tape and Jest](https://raygun.com/blog/javascript-unit-testing-frameworks/)
-
 - AVA： 相对于 Mocha 执行更快，测试环境隔离、支持原子测试；相对于 Jest 组合更加灵活
 - Mocha + Chai：相对较为成熟
 - Jest：[Create React App](https://github.com/facebookincubator/create-react-app) 、 [Microsoft/TypeScript-React-Starter](Microsoft/TypeScript-React-Starter) 和 [Ant Design](https://github.com/ant-design/ant-design-pro) 中内置的推荐方案，是个一体化方案
@@ -65,6 +63,8 @@ UI Recorder 或 Nightwatch
 
 ## 参考
 
+- [JavaScript 单元测试框架大乱斗：Jasmine、Mocha、AVA、Tape 以及 Jest](https://raygun.com/blog/javascript-unit-testing-frameworks/)
+- [基于 JavaScript 的 Web 应用的端到端测试工具对比](https://mo.github.io/2017/07/20/javascript-e2e-integration-testing.html)
 - [别再加端到端集成测试了，快换契约测试吧](http://insights.thoughtworks.cn/contract-test/)
 - [从工程化角度讨论如何快速构建可靠React组件](https://github.com/lcxfs1991/blog/issues/18)
 - [How to Test a React and Redux Application ](https://semaphoreci.com/community/tutorials/getting-started-with-create-react-app-and-ava)
