@@ -1,4 +1,4 @@
-# 基于 ava 和 UI Recorder 的 React Redux 前端测试
+# 基于 ava 和 UI Recorder 的 React Redux 前端自动化测试实践
 
 > 最佳适用于 `TypeScript + Scss/Less + React + Redux +  React Dom + React Router + React Thunk` 技术栈的前端。
 
