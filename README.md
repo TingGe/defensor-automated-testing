@@ -12,7 +12,7 @@
 
 1. React Redux 测试：typescript + ava + enzyme(sinon、redux-mock-store) 组合
 2. 覆盖率：nyc
-3. 集成测试： UI Recorder 或 Nightwatch
+3. 集成测试： [UI Recorder](https://github.com/alibaba/uirecorder) 或 Nightwatch
 
 
 ### 组件：React  + Redux
