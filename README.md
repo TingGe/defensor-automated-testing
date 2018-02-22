@@ -1,5 +1,7 @@
 # 基于 ava 和 UI Recorder 的 React Redux 前端自动化测试实践
 
+![](https://img.alicdn.com/tfs/TB1A6F1X4GYBuNjy0FnXXX5lpXa-981-412.png)
+
 > 最佳适用于 `TypeScript + Scss/Less + React + Redux +  React Dom + React Router + React Thunk` 技术栈的前端。
 
 一个针对 TypScript 源码的 React Redux 项目的模版项目。
@@ -43,12 +45,12 @@
 
 | 测试工具类型                                   | 选型                                       | 同类                                       |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| **test runner**,**snapshots**,**display, and watch** | AVA                                      | Jest, Wallaby.js                         |
-| **assertions functions**                 | enzyme                                   | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai |
-| **mocks, spies, and stubs**              | sinon                                    | [testdouble.js](https://github.com/testdouble/testdouble.js) |
+| **test runner**,**snapshots**,**display, and watch** | [AVA](https://github.com/avajs/ava)      | Jest, Wallaby.js                         |
+| **assertions functions**                 | [enzyme](https://github.com/airbnb/enzyme) | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai |
+| **mocks, spies, and stubs**              | [sinon](http://sinonjs.org/)             | [testdouble.js](https://github.com/testdouble/testdouble.js) |
 | **code coverage**                        | [nyc](https://github.com/istanbuljs/nyc) |                                          |
 | **e2e**                                  | [Nightwatch](http://nightwatchjs.org/)、[UI Recorder](https://github.com/alibaba/uirecorder) | [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs) |
-| **模拟浏览器 dom**                            | JsDom                                    |                                          |
+| **模拟浏览器 dom**                            | [JsDom](https://github.com/jsdom/jsdom)  |                                          |
 
 ## 踩过的坑
 
