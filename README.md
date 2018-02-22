@@ -31,7 +31,7 @@
 
 ### E2E 测试
 
-UI Recorder 或 Nightwatch
+[UI Recorder](https://github.com/alibaba/uirecorder) 或 Nightwatch
 
 ## 对比的一些工具
 
