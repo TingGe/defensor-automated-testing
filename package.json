@@ -32,13 +32,16 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "husky": "^0.14.3",
+    "imagemin-lint-staged": "^0.3.0",
     "jsdom": "^11.6.2",
     "jsdom-global": "^3.0.2",
     "lint-staged": "^7.0.2",
     "nyc": "^11.6.0",
+    "prettier": "^1.11.1",
     "react-test-renderer": "^16.3.0",
     "redux-mock-store": "^1.5.1",
     "sinon": "^4.5.0",
+    "stylelint": "^9.2.0",
     "tap-that-html": "^1.0.1",
     "ts-loader": "^4.1.0",
     "typescript": "^2.8.1",
@@ -46,9 +49,17 @@
     "webpack-dev-server": "^3.1.1"
   },
   "lint-staged": {
-    "*/**/*.(ts|tsx)": [
-      "tslint",
-      "prettier --trailing-comma es5 --single-quote --write",
+    "*.{ts,tsx}": [
+      "prettier --parser typescript --write",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint --syntax=scss",
+      "stylelint",
+      "git add"
+    ],
+    "*.{png,jpeg,jpg,gif,svg}": [
+      "imagemin-lint-staged",
       "git add"
     ],
     "yarn.lock": [
