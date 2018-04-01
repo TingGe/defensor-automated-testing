@@ -13,10 +13,10 @@
 
 ### 代码静态检查
 
-1. 检查工作流：husky + lint-staged
-2. ts 和 tsx：tslint + prettier
-3. scss 和 css：stylelint
-4. 图片和 svg 等：imagemin-lint-staged
+1. Git hook：husky + lint-staged
+2. ts 和 tsx 合规检查和修复：tslint + prettier
+3. scss 和 css 合规检查和修复：stylelint
+4. 图片和 svg 等压缩：imagemin-lint-staged
 
 ## 测试
 
