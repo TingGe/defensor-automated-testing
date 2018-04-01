@@ -42,19 +42,22 @@
     "redux-mock-store": "^1.5.1",
     "sinon": "^4.5.0",
     "stylelint": "^9.2.0",
+    "stylelint-config-standard": "^18.2.0",
     "tap-that-html": "^1.0.1",
     "ts-loader": "^4.1.0",
+    "tslint-react": "^3.5.1",
     "typescript": "^2.8.1",
     "webpack": "^4.4.1",
     "webpack-dev-server": "^3.1.1"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
+      "tslint --fix",
       "prettier --parser typescript --write",
       "git add"
     ],
-    "*.scss": [
-      "stylelint --syntax=scss",
+    "*.{css,scss}": [
+      "stylelint -s scss --fix",
       "stylelint",
       "git add"
     ],
