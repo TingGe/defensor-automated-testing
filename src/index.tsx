@@ -2,20 +2,20 @@
  * 应用入口文件
  */
 
-import * as React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import App from './app';
+import * as React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import App from "./app";
 
-import configureStore from './configureStore';
-import { toggleTodo } from './TodoList/actions';
-import registerServiceWorker from './registerServiceWorker';
+import configureStore from "./configureStore";
+import { toggleTodo } from "./TodoList/actions";
+import registerServiceWorker from "./registerServiceWorker";
 
 const store = configureStore({
   todos: [
-    { id: 0, completed: false, text: 'buy milk' },
-    { id: 1, completed: false, text: 'walk the dog' },
-    { id: 2, completed: false, text: 'study' }
+    { id: 0, completed: false, text: "buy milk" },
+    { id: 1, completed: false, text: "walk the dog" },
+    { id: 2, completed: false, text: "study" }
   ]
 });
 
@@ -25,6 +25,6 @@ render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root') as HTMLElement
+  document.getElementById("page-root") as HTMLElement
 );
 registerServiceWorker();

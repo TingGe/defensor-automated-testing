@@ -1,11 +1,11 @@
-import * as React from 'react';
+import * as React from "react";
 
 interface Props {
   id: number;
   completed: boolean;
   text: React.ReactNode;
   onToggle: Function;
-};
+}
 
 class Todo extends React.Component<Props, any> {
   props: any;
@@ -19,7 +19,12 @@ class Todo extends React.Component<Props, any> {
 
   render() {
     return (
-      <li style={{ textDecoration: this.props.completed ? 'line-through' : 'none' }} onClick = {this.onClick}>
+      <li
+        style={{
+          textDecoration: this.props.completed ? "line-through" : "none"
+        }}
+        onClick={this.onClick}
+      >
         {this.props.text}
       </li>
     );

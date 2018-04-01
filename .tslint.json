@@ -1,4 +1,4 @@
 {
-    "extends": ["tslint:recommended", "tslint-react"],
-    "rules": {}
+  "extends": ["tslint:recommended", "tslint-config-prettier", "tslint-react"],
+  "rules": {}
 }
