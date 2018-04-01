@@ -1,7 +1,6 @@
-import { combineReducers } from 'redux';
-import { TOGGLE_TODO } from './actions';
+import { TOGGLE_TODO } from "./actions";
 
-export const todos = (state = [], action) => {
+export const reducer = (state = [], action) => {
   switch (action.type) {
     case TOGGLE_TODO:
       return state.map(t => {
@@ -9,10 +8,10 @@ export const todos = (state = [], action) => {
           return { ...t, completed: !t.completed };
         }
         return t;
-      })
+      });
     default:
       return state;
   }
 };
 
-export default combineReducers({ todos });
+export default reducer;

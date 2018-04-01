@@ -7,8 +7,16 @@
 一个针对 TypScript 源码的 React Redux 项目的模版项目。
 
 - 采用  React 和 TypeScript；
+- 代码静态检查：husky + lint-staged + tslint + prettier + stylelint + imagemin-lint-staged
 - 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式；
 - Redux 做状态管理。
+
+### 代码静态检查
+
+1. 检查工作流：husky + lint-staged
+2. ts 和 tsx：tslint + prettier
+3. scss 和 css：stylelint
+4. 图片和 svg 等：imagemin-lint-staged
 
 ## 测试
 
