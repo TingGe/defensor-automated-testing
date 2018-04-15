@@ -1,6 +1,6 @@
 # 基于 ava 和 UI Recorder 的 React Redux 前端自动化测试实践
 
-[![CircleCI](https://circleci.com/gh/TingGe/ava-testing.svg?style=svg)](https://circleci.com/gh/TingGe/ava-testing)
+[![CircleCI](https://circleci.com/gh/TingGe/ava-testing/tree/master.svg?style=svg)](https://circleci.com/gh/TingGe/ava-testing/tree/master)
 
 ![](https://img.alicdn.com/tfs/TB1A6F1X4GYBuNjy0FnXXX5lpXa-981-412.png)
 
