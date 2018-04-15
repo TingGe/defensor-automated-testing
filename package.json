@@ -11,10 +11,9 @@
     "start": "webpack-dev-server --config webpack.config.js --inline --hot --content-base ./public",
     "test:watch": "tsc --watch | ava --watch",
     "pretest": "rm -rf reports && mkdirp reports/unit & tsc",
-    "test": "npm run test:unit && npm run test:coverage && npm run test:uitest",
+    "test": "npm run test:unit && npm run test:coverage",
     "test:unit": "ava | tap-that-html > reports/unit/index.html",
     "test:coverage": "nyc --reporter=html --report-dir reports/coverage --reporter=text ava",
-    "test:uitest": "source ./uitest.sh",
     "posttest": "rm -rf .nyc_output built coverage",
     "precommit": "lint-staged && npm run test",
     "premerge": "npm i"
