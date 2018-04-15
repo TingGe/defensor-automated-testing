@@ -2,14 +2,14 @@
 
 ![](https://img.alicdn.com/tfs/TB1A6F1X4GYBuNjy0FnXXX5lpXa-981-412.png)
 
-> 最佳适用于 `TypeScript + Scss/Less + React + Redux +  React Dom + React Router + React Thunk` 技术栈的前端。
+> 最佳适用于 `TypeScript + Scss/Less + React + React Dom + React Router` 技术栈的前端。
 
-一个针对 TypScript 源码的 React Redux 项目的模版项目。
+一个针对 TypScript 源码的 React 16 项目的模版项目。
 
 - 采用  React 和 TypeScript；
 - 代码静态审查：husky + lint-staged + tslint + prettier + stylelint + imagemin-lint-staged
 - 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式；
-- Redux 做状态管理。
+- React Provider 做状态管理。
 
 ### 代码静态审查
 
@@ -20,20 +20,16 @@
 
 ## 测试
 
-1. React Redux 测试：typescript + ava + enzyme(sinon、redux-mock-store) 组合
+1. React Redux 测试：typescript + ava + enzyme(sinon) 组合
 2. 覆盖率：nyc
 3. 集成测试： [UI Recorder](https://github.com/alibaba/uirecorder) 或 Nightwatch
 
 
-### 组件：React  + Redux
+### 组件：React
 
 支持 watch 模式；原子测试
-
-1. actions 测试
-2. reducer 测试
-3. select 测试
-4. React + Redux 测试
-5. 输出报告
+1. React 测试
+2. 输出报告
 
 ### 覆盖率
 

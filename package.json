@@ -1,15 +1,15 @@
 {
   "private": false,
   "name": "ava-testing",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TingGe/ava-testing.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.js --inline --hot --content-base ./public",
-    "precommit": "lint-staged",
+    "start": "webpack-dev-server --config webpack.config.js --inline --hot --content-base ./public",
+    "precommit": "lint-staged && npm run test",
     "test:watch": "tsc --watch | ava --watch",
     "pretest": "rm -rf reports && mkdirp reports/unit & tsc",
     "test": "npm run test:unit && npm run test:coverage && npm run test:uitest",
@@ -19,13 +19,9 @@
     "posttest": "rm -rf .nyc_output built coverage"
   },
   "dependencies": {
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
-    "react-redux": "^5.0.7",
-    "react-router": "^4.2.0",
-    "react-router-redux": "^4.0.8",
-    "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-router": "^4.2.0"
   },
   "devDependencies": {
     "ava": "^0.25.0",
@@ -51,6 +47,7 @@
     "tslint-react": "^3.5.1",
     "typescript": "^2.8.1",
     "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.14",
     "webpack-dev-server": "^3.1.1"
   },
   "lint-staged": {
@@ -74,7 +71,7 @@
   },
   "ava": {
     "require": [
-      "./tests/helpers/setup.js"
+      "./test/helpers/setup.js"
     ],
     "concurrency": 5,
     "failFast": true,

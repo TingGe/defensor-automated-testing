@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
+  mode: 'development',
   devtool: 'inline-source-map',
   entry: {
     devServer: 'webpack-dev-server/client?http://0.0.0.0:3000',
