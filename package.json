@@ -15,7 +15,7 @@
     "test": "npm run test:unit && npm run test:coverage && npm run test:uitest",
     "test:unit": "ava | tap-that-html > reports/unit/index.html",
     "test:coverage": "nyc --reporter=html --report-dir reports/coverage --reporter=text ava",
-    "test:uitest": "source ./uitest.sh",
+    "test:uitest": "./uitest.sh",
     "posttest": "rm -rf .nyc_output built coverage"
   },
   "dependencies": {
