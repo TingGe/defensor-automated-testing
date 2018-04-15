@@ -1,5 +1,7 @@
 # 基于 ava 和 UI Recorder 的 React Redux 前端自动化测试实践
 
+[![CircleCI](https://circleci.com/gh/TingGe/ava-testing.svg?style=svg)](https://circleci.com/gh/TingGe/ava-testing)
+
 ![](https://img.alicdn.com/tfs/TB1A6F1X4GYBuNjy0FnXXX5lpXa-981-412.png)
 
 > 最佳适用于 `TypeScript + Scss/Less + React + React Dom + React Router` 技术栈的前端。
