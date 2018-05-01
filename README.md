@@ -1,6 +1,7 @@
 # 基于 ava 和 UI Recorder 的 React Redux 前端自动化测试实践
 
 [![Build Status](https://travis-ci.org/TingGe/ava-testing.svg?branch=master)](https://travis-ci.org/TingGe/ava-testing) [![Coverage Status](https://coveralls.io/repos/github/TingGe/ava-testing/badge.svg)](https://coveralls.io/github/TingGe/ava-testing) [![CircleCI](https://circleci.com/gh/TingGe/ava-testing/tree/master.svg?style=svg)](https://circleci.com/gh/TingGe/ava-testing/tree/master)
+[![codebeat badge](https://codebeat.co/badges/5e895c71-88f8-4600-b522-ad9c5fd0214e)](https://codebeat.co/projects/github-com-tingge-ava-testing-master)
 
 ![](https://raw.githubusercontent.com/TingGe/ava-testing/master/assets/image/testing-structure.png)
 
