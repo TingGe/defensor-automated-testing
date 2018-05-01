@@ -22,6 +22,15 @@
 
 ## 测试
 
+#### 关于是否需要自动化测试？
+
+可参考标准
+
+- 自动化收益 = 有效迭代次数 x 手工测试的成本
+- 自动化成本 = 脚本创建成本 + 维护次数 x 维护调试成本 + 脚本失败次数 x 脚本排错成本
+
+本项目采用的自动化测试技术方案
+
 1. React Redux 测试：typescript + ava + enzyme(sinon、redux-mock-store) 组合
 2. 覆盖率：nyc
 3. 集成测试： [UI Recorder](https://github.com/alibaba/uirecorder) 或 Nightwatch
@@ -43,7 +52,12 @@
 
 ### E2E 测试
 
-[UI Recorder](https://github.com/alibaba/uirecorder) 或 Nightwatch
+> 可独立于项目代码。支持本地运行、手工触发、定时触发、发布流程触发四种方式，实现业务流程的快速自动回归测试。
+
+1. 跨端（多浏览器兼容）自动化测试及报告： [UI Recorder](https://github.com/alibaba/uirecorder)、[F2etest](https://github.com/alibaba/f2etest) 
+2. 持续集成（CI）服务、用例和缺陷管理：Aone
+3. 全球化（G11N）自动测试报告：ACGT
+4. 业务异常报告：智能质量引擎
 
 ## 对比的一些工具
 
