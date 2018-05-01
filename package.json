@@ -12,7 +12,7 @@
     "precommit": "lint-staged",
     "test:watch": "tsc --watch | ava --watch",
     "pretest": "rm -rf reports && mkdirp reports/unit & tsc",
-    "test": "npm run test:unit && npm run test:coverage && npm run coverage",
+    "test": "npm run test:unit && npm run test:coverage",
     "test:unit": "ava | tap-that-html > reports/unit/index.html",
     "test:coverage": "nyc --reporter=html --report-dir reports/coverage --reporter=text ava",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
