@@ -3,6 +3,6 @@ sudo: false
 node_js:
   - "10"
 install:
-  - npm ii
+  - npm install
 script:
   - npm test
