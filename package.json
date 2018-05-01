@@ -15,6 +15,7 @@
     "test": "npm run test:unit && npm run test:coverage",
     "test:unit": "ava | tap-that-html > reports/unit/index.html",
     "test:coverage": "nyc --reporter=html --report-dir reports/coverage --reporter=text ava",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "posttest": "rm -rf .nyc_output built coverage"
   },
   "dependencies": {
@@ -73,7 +74,7 @@
   },
   "ava": {
     "require": [
-      "./tests/helpers/setup.js"
+      "./test/helpers/setup.js"
     ],
     "concurrency": 5,
     "failFast": true,
