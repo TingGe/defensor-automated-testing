@@ -1,7 +1,21 @@
 {
   "extends": [
     "stylelint-config-standard",
+    "stylelint-config-idiomatic-order",
     "./node_modules/prettier-stylelint/config.js"
   ],
-  "rules": {}
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "max-nesting-depth": 6,
+    "no-descending-specificity": null,
+    "selector-list-comma-newline-after": "always-multi-line",
+    "declaration-empty-line-before": "never",
+    "declaration-colon-newline-after": null,
+    "value-list-comma-newline-after": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true
+  }
 }
