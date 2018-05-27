@@ -1,4 +1,4 @@
-import { TOGGLE_TODO } from "./actions";
+import { TOGGLE_TODO } from './actions';
 
 export const reducer = (state = [], action) => {
   switch (action.type) {

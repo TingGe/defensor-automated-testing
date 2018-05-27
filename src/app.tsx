@@ -9,7 +9,7 @@ class App extends React.Component<any, any> {
         <TodoList />
       </div>
     );
-  };
+  }
 }
 
 export default App;

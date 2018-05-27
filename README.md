@@ -21,6 +21,60 @@
 3. scss 和 css 合规检查和修复：stylelint
 4. 图片和 svg 等压缩：imagemin-lint-staged
 
+#### prettier 执行方式
+
+方式一：
+
+VS Code 的 [prettier-vscode 插件](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)提示
+
+方式二：
+
+借助 [husky](https://github.com/typicode/husky) 在代码 commit 时代码审查（自动修复和提示）
+
+方式三：
+
+根目录执行以下命令（自动修复和提示）
+
+```bash
+npx prettier --write './src/**/*.{ts,tsx,js,scss}'
+```
+
+#### tslint 执行方式
+
+方式一：
+
+VS Code 的 [vscode-tslint 插件](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)提示
+
+方式二：
+
+借助 [husky](https://github.com/typicode/husky) 在代码 commit 时代码审查（自动修复和提示）
+
+方式三：
+
+根目录执行以下命令（自动修复和提示）
+
+```bash
+tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'
+```
+
+#### stylelint 执行方式
+
+方式一：
+
+VS Code 的 [stylelint 插件](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint)提示
+
+方式二：
+
+借助 [husky](https://github.com/typicode/husky) 在代码 commit 时代码审查（自动修复和提示）
+
+方式三：
+
+根目录执行以下命令（自动修复和提示）
+
+```Bash
+npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss 
+```
+
 ## 测试
 
 #### 关于是否需要自动化测试？

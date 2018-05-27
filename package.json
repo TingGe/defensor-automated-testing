@@ -9,6 +9,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js --inline --hot --content-base ./public",
+    "lint": "tslint -c tslint.json -p tsconfig.json 'src/**/*.{ts,tsx}'",
+    "lint:auto-fix": "prettier --write './src/**/*.{ts,tsx,js,scss}' && tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'",
     "precommit": "lint-staged",
     "test:watch": "tsc --watch | ava --watch",
     "pretest": "rm -rf reports && mkdirp reports/unit & tsc",
@@ -46,6 +48,7 @@
     "stylelint": "^9.2.1",
     "stylelint-config-idiomatic-order": "^5.0.0",
     "stylelint-config-standard": "^18.2.0",
+    "stylelint-scss": "^3.1.0",
     "tap-that-html": "^1.0.1",
     "ts-loader": "^4.3.0",
     "tslint": "^5.10.0",
@@ -56,14 +59,15 @@
     "webpack-dev-server": "^3.1.4"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "tslint --fix",
+    "{src,docs}/**/*.{ts,tsx}": [
       "prettier --parser typescript --write",
+      "tslint -c tslint.json --fix",
+      "tslint -c tslint.json",
       "git add"
     ],
     "*.{css,scss}": [
-      "stylelint -s scss --fix",
-      "stylelint",
+      "prettier --write", 
+      "stylelint -q -s scss --fix", 
       "git add"
     ],
     "*.{png,jpeg,jpg,gif,svg}": [
