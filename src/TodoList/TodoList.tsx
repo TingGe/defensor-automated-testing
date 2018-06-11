@@ -1,30 +1,19 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { toggleTodo } from './actions';
 import { getTodos } from './selectors';
 import Todo from './Todo';
-
 import './TodoList.scss';
-
-interface Props {
-  todos: any[];
-  toggleTodo: () => void;
-}
+import { actions, InitialState } from './TodoListRedux';
 
 const mapStateToProps = state => {
   return { ...state, todos: getTodos(state) };
 };
 
 const mapDispatchToProps = {
-  toggleTodo
+  ...actions
 };
 
-class TodoList extends React.Component<Props, any> {
-  props: any;
-  constructor(props) {
-    super(props);
-  }
-
+class TodoList extends React.Component<InitialState & typeof mapDispatchToProps, any> {
   render() {
     return (
       <ul className="page-todo-list">
@@ -34,4 +23,7 @@ class TodoList extends React.Component<Props, any> {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+export default connect<InitialState, typeof mapDispatchToProps>(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList);

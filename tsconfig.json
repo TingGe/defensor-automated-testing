@@ -2,21 +2,25 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "declaration": false,
-    "target": "es5",
-    "removeComments": true,
+    "target": "es2015",
     "preserveConstEnums": true,
     "jsx": "react",
     "sourceMap": true,
-    "outDir": "built",
+    "outDir": "build",
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "noEmitOnError": true,
+    "module": "commonjs",
+    "pretty": true,
     "baseUrl": ".",
     "paths": {
       "src": ["./src"]
     },
     "allowSyntheticDefaultImports": true,
-    "lib": ["dom", "es6", "es2017", "dom.iterable", "scripthost"]
+    "lib": ["dom", "es2015", "es2016", "es2017", "dom.iterable", "scripthost"]
   },
   "include": ["./src/**/*", "./test/**/*"],
   "exclude": ["node_modules", "build"]

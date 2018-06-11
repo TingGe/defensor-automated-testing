@@ -1,10 +1,10 @@
 import { test } from "ava";
-import * as React from "react";
 import { mount } from "enzyme";
+import * as React from "react";
 import { Provider } from "react-redux";
 import * as configureStore from "redux-mock-store";
 import TodoList from "src/TodoList/TodoList";
-import { toggleTodo } from "src/TodoList/actions";
+import { actions } from 'src/TodoList/TodoListRedux';
 
 const mockStore = configureStore();
 const initialState = {
@@ -26,5 +26,5 @@ test("dispatches toggleTodo action", t => {
     .find("Todo")
     .at(0)
     .simulate("click");
-  t.deepEqual(store.getActions(), [toggleTodo(0)]);
+  t.deepEqual(store.getActions(), [actions.toggleTodo(0)]);
 });

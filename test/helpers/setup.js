@@ -21,7 +21,7 @@ Module.prototype.require = function(requirePath) {
   }
 
   if (requirePath && requirePath.indexOf("src/") === 0) {
-    return prevRequire.call(this, path.resolve("./built/" + requirePath));
+    return prevRequire.call(this, path.resolve("./build/" + requirePath));
   }
   return prevRequire.call(this, requirePath);
 };

@@ -9,9 +9,6 @@ interface Props {
 
 class Todo extends React.Component<Props, any> {
   props: any;
-  constructor(props) {
-    super(props);
-  }
 
   onClick = () => {
     this.props.onToggle(this.props.id);

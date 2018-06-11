@@ -1,9 +1,9 @@
 import { test } from "ava";
-import { toggleTodo, TOGGLE_TODO } from "src/TodoList/actions";
+import { actions, Types } from "src/TodoList/TodoListRedux";
 
 test("toggleTodo action", t => {
-  t.deepEqual(toggleTodo(5), {
-    type: TOGGLE_TODO,
+  t.deepEqual(actions.toggleTodo(5), {
+    type: Types.toggleTodo,
     payload: 5
   });
 });

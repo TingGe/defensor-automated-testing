@@ -1,11 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'inline-source-map',
+  mode: 'production',
   entry: {
-    devServer: 'webpack-dev-server/client?http://0.0.0.0:3000',
     index: './src/index.tsx'
   },
   output: {
@@ -15,18 +14,21 @@ module.exports = {
     chunkFilename: '[name]-[chunkhash].js'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.ts', '.tsx', '.js', '.json'],
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader'
+        include: [path.resolve(__dirname, './src')],
+        loader: 'ts-loader',
+        configFile: path.resolve(__dirname, './tsconfig.prod.json')
       },
       {
         test: /\.scss$/,
         include: [path.resolve(__dirname, './src')],
         use: [
+          MiniCssExtractPlugin.loader,
           'style-loader',
           'css-loader?sourceMap&minimize',
           {
@@ -40,5 +42,9 @@ module.exports = {
       }
     ]
   },
-  plugins: [new webpack.WatchIgnorePlugin([/\.js$/, /\.d\.ts$/])]
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    }),
+  ]
 };

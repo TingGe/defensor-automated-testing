@@ -1,10 +1,9 @@
-import "jsdom-global/register";
 import { test } from "ava";
+import "jsdom-global/register";
 import * as React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
 import * as configureStore from "redux-mock-store";
-import thunk from "redux-thunk";
 import App from "../src/app";
 
 const mockStore = configureStore();
