@@ -15,4 +15,5 @@ yarn-error.log*
 .generate_config.json
 *.orig
 .package-lock.json
+build/
 

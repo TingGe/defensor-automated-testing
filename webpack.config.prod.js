@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'production',
@@ -21,14 +20,12 @@ module.exports = {
       {
         test: /\.tsx?$/,
         include: [path.resolve(__dirname, './src')],
-        loader: 'ts-loader',
-        configFile: path.resolve(__dirname, './tsconfig.prod.json')
+        loader: 'ts-loader'
       },
       {
         test: /\.scss$/,
         include: [path.resolve(__dirname, './src')],
         use: [
-          MiniCssExtractPlugin.loader,
           'style-loader',
           'css-loader?sourceMap&minimize',
           {
@@ -42,9 +39,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css'
-    }),
-  ]
+  plugins: []
 };
