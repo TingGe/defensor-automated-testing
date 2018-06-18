@@ -7,6 +7,8 @@
 
 > 最佳适用于 `TypeScript + Scss/Less + React + Redux +  React Dom + React Router + React Thunk` 技术栈的前端。
 
+react react-redux rematch, reach
+
 一个针对 TypScript 源码的 React Redux 项目的模版项目。
 
 - 采用  React 和 TypeScript；

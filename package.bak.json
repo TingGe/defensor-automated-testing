@@ -13,7 +13,13 @@
     "lint": "tslint -c tslint.json -p tsconfig.json 'src/**/*.{ts,tsx}'",
     "lint:auto-fix": "prettier --write './src/**/*.{ts,tsx,js,scss}' && tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'",
     "precommit": "lint-staged",
-    "test": "echo null"
+    "test:watch": "tsc --watch | ava --watch",
+    "pretest": "rm -rf reports && mkdirp reports/unit & tsc",
+    "test": "npm run test:unit && npm run test:coverage",
+    "test:unit": "ava | tap-that-html > reports/unit/index.html",
+    "test:coverage": "nyc --reporter=html --report-dir reports/coverage --reporter=text ava",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "posttest": "rm -rf .nyc_output coverage"
   },
   "dependencies": {
     "@rematch/core": "^1.0.0-beta.2",
@@ -79,6 +85,16 @@
     "yarn.lock": [
       "git rm --cached"
     ]
+  },
+  "ava": {
+    "require": [
+      "./test/helpers/setup.js"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "failWithoutAssertions": false,
+    "tap": true,
+    "powerAssert": false
   },
   "author": "TingGe<505253293@163.com>",
   "license": "MIT"
