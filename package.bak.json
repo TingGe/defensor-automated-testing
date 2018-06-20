@@ -8,8 +8,8 @@
     "url": "git+https://github.com/TingGe/ava-testing.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.js --inline --hot --content-base ./public",
-    "build": "webpack --config webpack.config.prod.js",
+    "start": "webpack-dev-server --config webpack.dev.config.js --inline --hot --content-base ./public",
+    "build": "webpack --config webpack.prod.config.js",
     "lint": "tslint -c tslint.json -p tsconfig.json 'src/**/*.{ts,tsx}'",
     "lint:auto-fix": "prettier --write './src/**/*.{ts,tsx,js,scss}' && tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'",
     "precommit": "lint-staged",

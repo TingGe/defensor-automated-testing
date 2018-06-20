@@ -1,27 +1,21 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
-  mode: 'production',
-  entry: {
-    index: './src/index.tsx'
-  },
+	entry: './src/index.tsx',
   output: {
     path: __dirname + '/build',
     publicPath: '/build',
     filename: '[name].js',
     chunkFilename: '[name]-[chunkhash].js'
   },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        include: [path.resolve(__dirname, './src')],
-        loader: 'ts-loader'
-      },
+	devtool: 'inline-source-map',
+	resolve: {
+		extensions: ['.ts', '.tsx', '.js', '.json'],
+	},
+	module: {
+		rules: [
+			{ test: /\.tsx?$/, loader: 'ts-loader' },
+      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       {
         test: /\.scss$/,
         include: [path.resolve(__dirname, './src')],
@@ -37,7 +31,7 @@ module.exports = {
           }
         ]
       }
-    ]
-  },
-  plugins: []
-};
+		],
+	},
+	plugins: [],
+}

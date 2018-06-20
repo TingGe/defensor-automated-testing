@@ -8,14 +8,15 @@
     "url": "git+https://github.com/TingGe/ava-testing.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.js --inline --hot --content-base ./public",
-    "build": "webpack --config webpack.config.prod.js",
+    "start": "webpack-dev-server --config webpack.dev.config.js --inline --hot --content-base ./public",
+    "build": "webpack --config webpack.prod.config.js",
     "lint": "tslint -c tslint.json -p tsconfig.json 'src/**/*.{ts,tsx}'",
     "lint:auto-fix": "prettier --write './src/**/*.{ts,tsx,js,scss}' && tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'",
     "precommit": "lint-staged",
     "test": "echo null"
   },
   "dependencies": {
+    "@reach/router": "^1.1.1",
     "@rematch/core": "^1.0.0-beta.2",
     "@rematch/select": "^1.0.2",
     "react": "^16.4.1",
@@ -23,7 +24,7 @@
     "react-redux": "^5.0.7"
   },
   "devDependencies": {
-    "@types/react": "^16.3.18",
+    "@types/react": "^16.4.1",
     "@types/react-dom": "^16.0.6",
     "@types/react-redux": "^6.0.2",
     "ava": "^0.25.0",
@@ -45,6 +46,7 @@
     "redux-mock-store": "^1.5.3",
     "sass-loader": "^7.0.3",
     "sinon": "^6.0.0",
+    "source-map-loader": "^0.2.3",
     "style-loader": "^0.21.0",
     "stylelint": "^9.3.0",
     "stylelint-config-idiomatic-order": "^5.0.0",
