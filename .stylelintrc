@@ -8,7 +8,7 @@
     "stylelint-scss"
   ],
   "rules": {
-    "max-nesting-depth": 6,
+    "max-nesting-depth": 5,
     "no-descending-specificity": null,
     "selector-list-comma-newline-after": "always-multi-line",
     "declaration-empty-line-before": "never",
@@ -17,5 +17,6 @@
     "font-family-no-missing-generic-family-keyword": null,
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": true
-  }
+  },
+  "ignoreFiles": ["./node_modules/**", "**/*.ts", "**/*.tsx"]
 }

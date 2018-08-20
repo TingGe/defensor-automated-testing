@@ -8,12 +8,15 @@
     "url": "git+https://github.com/TingGe/ava-testing.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.config.js --inline --hot --content-base ./public",
-    "build": "webpack --config webpack.prod.config.js",
-    "lint": "tslint -c tslint.json -p tsconfig.json 'src/**/*.{ts,tsx}'",
-    "lint:auto-fix": "prettier --write './src/**/*.{ts,tsx,js,scss}' && tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'",
+    "dev": "webpack --mode development --env.dist=false --config config/webpack.dev.config.js",
+    "dev:dist": "webpack --mode development",
+    "build": "webpack --mode production --config config/webpack.prod.config.js",
     "precommit": "lint-staged",
-    "test": "echo null"
+    "test": "source test.sh",
+    "prebuild": "npm run test",
+    "lint:fix": "prettier --write './src/**/*.{ts,tsx,js,scss}' && tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "test:watch": "tsc --watch | ava --watch"
   },
   "dependencies": {
     "@reach/router": "^1.1.1",
@@ -28,11 +31,19 @@
     "@types/react-dom": "^16.0.6",
     "@types/react-redux": "^6.0.2",
     "ava": "^0.25.0",
+    "circular-dependency-plugin": "^5.0.2",
     "coveralls": "^3.0.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.11",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "exports-loader": "^0.7.0",
+    "file-loader": "^1.1.11",
+    "fork-ts-checker-webpack-plugin": "^0.4.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
     "husky": "^0.14.3",
+    "image-webpack-loader": "^4.3.1",
     "imagemin-lint-staged": "^0.3.0",
     "jsdom": "^11.11.0",
     "jsdom-global": "^3.0.2",
@@ -42,8 +53,10 @@
     "nyc": "^12.0.2",
     "prettier": "^1.13.5",
     "prettier-stylelint": "^0.4.2",
+    "react-polyfills": "^0.0.1",
     "react-test-renderer": "^16.4.1",
     "redux-mock-store": "^1.5.3",
+    "rimraf": "^2.6.2",
     "sass-loader": "^7.0.3",
     "sinon": "^6.0.0",
     "source-map-loader": "^0.2.3",
@@ -58,9 +71,11 @@
     "tslint-config-prettier": "^1.13.0",
     "tslint-react": "^3.6.0",
     "typescript": "^2.9.2",
+    "url-loader": "^1.0.1",
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-serve": "^1.0.4",
+    "webpackbar": "^2.6.1"
   },
   "lint-staged": {
     "{src,docs}/**/*.{ts,tsx}": [
