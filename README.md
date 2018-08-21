@@ -2,6 +2,7 @@
 
 [![codebeat badge](https://codebeat.co/badges/5e895c71-88f8-4600-b522-ad9c5fd0214e)](https://codebeat.co/projects/github-com-tingge-ava-testing-master)
 [![Build Status](https://travis-ci.org/TingGe/ava-testing.svg?branch=master)](https://travis-ci.org/TingGe/ava-testing) [![Coverage Status](https://coveralls.io/repos/github/TingGe/ava-testing/badge.svg)](https://coveralls.io/github/TingGe/ava-testing) [![CircleCI](https://circleci.com/gh/TingGe/ava-testing/tree/master.svg?style=svg)](https://circleci.com/gh/TingGe/ava-testing/tree/master)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FTingGe%2Fava-testing.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FTingGe%2Fava-testing?ref=badge_shield)
 
 ![](https://raw.githubusercontent.com/TingGe/ava-testing/master/assets/image/testing-structure.png)
 
@@ -170,3 +171,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 1. 与测试团队整体测试的接入；
 2. 对开发者更加友好，降低用例的创建和维护成本；
 3. 从投入产出角度，减少人工干预环节。
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FTingGe%2Fava-testing.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FTingGe%2Fava-testing?ref=badge_large)
