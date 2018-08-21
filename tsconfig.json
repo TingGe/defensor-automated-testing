@@ -15,7 +15,8 @@
     "sourceMap": true,
     "jsx": "react",
     "allowJs": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "typeRoots": ["types"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "src/**/*.spec.*"]

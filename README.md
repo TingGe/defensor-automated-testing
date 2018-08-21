@@ -1,19 +1,17 @@
 # React Redux 前端研发品质实践
 
-[![codebeat badge](https://codebeat.co/badges/5e895c71-88f8-4600-b522-ad9c5fd0214e)](https://codebeat.co/projects/github-com-tingge-ava-testing-master)
-[![Build Status](https://travis-ci.org/TingGe/ava-testing.svg?branch=master)](https://travis-ci.org/TingGe/ava-testing) [![Coverage Status](https://coveralls.io/repos/github/TingGe/ava-testing/badge.svg)](https://coveralls.io/github/TingGe/ava-testing) [![CircleCI](https://circleci.com/gh/TingGe/ava-testing/tree/master.svg?style=svg)](https://circleci.com/gh/TingGe/ava-testing/tree/master)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FTingGe%2Fava-testing.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FTingGe%2Fava-testing?ref=badge_shield)
+[![codebeat badge](https://codebeat.co/badges/7bd2dadc-c77b-4db9-9790-e8a5f83a8dc8)](https://codebeat.co/projects/github-com-tingge-defensor-automated-testing-master)
+ [![Build Status](https://travis-ci.org/TingGe/ava-testing.svg?branch=master)](https://travis-ci.org/TingGe/ava-testing)  [![Coverage Status](https://coveralls.io/repos/github/TingGe/defensor-automated-testing/badge.svg?branch=master)](https://coveralls.io/github/TingGe/defensor-automated-testing?branch=master) [![CircleCI](https://circleci.com/gh/TingGe/ava-testing/tree/master.svg?style=svg)](https://circleci.com/gh/TingGe/ava-testing/tree/master)
 
 ![](https://raw.githubusercontent.com/TingGe/ava-testing/master/assets/image/testing-structure.png)
 
 > 最佳适用于 `TypeScript + Scss/Less + React + Redux +  React Dom + React Router + React Thunk` 技术栈的前端。
 
-一个针对 TypScript 源码的 React Redux 项目的模版项目。
+一个 React Redux 项目的模版项目。
 
-- 采用  React 和 TypeScript；
-- Redux 做状态管理；
-- 代码静态审查：husky + lint-staged + tslint + prettier + stylelint + imagemin-lint-staged；
-- 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式。
+- 采用 `TypeScript + Scss/Less + React + Redux +  React Dom + React Router + React Thunk` 技术栈
+- 代码静态审查：husky + lint-staged + tslint + prettier + stylelint + imagemin-lint-staged
+- 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式
 
 ### 代码静态审查
 
@@ -24,17 +22,11 @@
 
 #### prettier 执行方式
 
-方式一：
+方式一：VS Code 的 [prettier-vscode 插件](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)提示
 
-VS Code 的 [prettier-vscode 插件](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)提示
+方式二：借助 [husky](https://github.com/typicode/husky) 在代码 commit 时代码审查（自动修复和提示）
 
-方式二：
-
-借助 [husky](https://github.com/typicode/husky) 在代码 commit 时代码审查（自动修复和提示）
-
-方式三：
-
-根目录执行以下命令（自动修复和提示）
+方式三：根目录执行以下命令（自动修复和提示）
 
 ```bash
 npx prettier --write './src/**/*.{ts,tsx,js,scss}'
@@ -42,17 +34,11 @@ npx prettier --write './src/**/*.{ts,tsx,js,scss}'
 
 #### tslint 执行方式
 
-方式一：
+方式一：VS Code 的 [vscode-tslint 插件](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)提示
 
-VS Code 的 [vscode-tslint 插件](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)提示
+方式二：借助 [husky](https://github.com/typicode/husky) 在代码 commit 时代码审查（自动修复和提示）
 
-方式二：
-
-借助 [husky](https://github.com/typicode/husky) 在代码 commit 时代码审查（自动修复和提示）
-
-方式三：
-
-根目录执行以下命令（自动修复和提示）
+方式三：根目录执行以下命令（自动修复和提示）
 
 ```bash
 tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'
@@ -60,17 +46,13 @@ tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'
 
 #### stylelint 执行方式
 
-方式一：
-
-VS Code 的 [stylelint 插件](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint)提示
+方式一：VS Code 的 [stylelint 插件](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint)提示
 
 方式二：
 
 借助 [husky](https://github.com/typicode/husky) 在代码 commit 时代码审查（自动修复和提示）
 
-方式三：
-
-根目录执行以下命令（自动修复和提示）
+方式三：根目录执行以下命令（自动修复和提示）
 
 ```Bash
 npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss 
@@ -80,7 +62,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 #### 关于是否需要自动化测试？
 
-可参考标准
+参考标准
 
 - 自动化收益 = 迭代次数 * 全手动执行成本 - 首次自动化成本 - 维护次数 * 维护成本
 
@@ -119,7 +101,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 - AVA： 相对于 Mocha 执行更快，测试环境隔离、支持原子测试；相对于 Jest 组合更加灵活；
 - Mocha + Chai：相对较为成熟；
-- Jest：[Create React App](https://github.com/facebookincubator/create-react-app) 、 [Microsoft/TypeScript-React-Starter](Microsoft/TypeScript-React-Starter) 和 [Ant Design](https://github.com/ant-design/ant-design-pro) 中推荐方案，内置断言、测试覆盖率工具，是个一体化方案、开箱即用。
+- Jest：[Create React App](https://github.com/facebookincubator/create-react-app) 、 [Microsoft/TypeScript-React-Starter](Microsoft/TypeScript-React-Starter) 和 [Ant Design](https://github.com/ant-design/ant-design-pro) 中推荐方案，内置断言、测试覆盖率工具，是个一体化方案、开箱即用。提供测试环境Dom API支持、合理的默认值、预处理代码和默认执行并行测试在内的特性。
 
 
 
