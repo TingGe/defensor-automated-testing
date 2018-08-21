@@ -12,8 +12,7 @@
 - 采用  React 和 TypeScript；
 - Redux 做状态管理；
 - 代码静态审查：husky + lint-staged + tslint + prettier + stylelint + imagemin-lint-staged；
-- 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式；
-- 
+- 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式。
 
 ### 代码静态审查
 
@@ -123,18 +122,25 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 
 
-| 级别    | 类别           | 作用                                       | 选型                                                         | 同类                                                         |
-| ------- | -------------- | ------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| -       | 代码审查       | 统一团队代码风格                           | [Prettier](https://github.com/prettier/prettier)             |                                                              |
-| -       | 静态代码审查   | 现代 CSS 格式验证工具                      | [Stylelint](https://github.com/stylelint/stylelint)          |                                                              |
-| -       | 静态代码审查   | TypeScript 格式验证工具                    | [Tslint](https://palantir.github.io/tslint/)                 |                                                              |
-| 单元    | 测试框架       | test runner, snapshots, display, and watch | [AVA](https://github.com/avajs/ava)                          | Jest, Wallaby.js                                             |
-| 单元    | 断言库         | assertions functions                       | [enzyme](https://github.com/airbnb/enzyme)                   | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai |
-| 单元    | Mock工具       | mocks, spies, and stubs                    | [sinon](http://sinonjs.org/)                                 | [testdouble.js](https://github.com/testdouble/testdouble.js) |
-| 单元    | 测试覆盖路工具 | code coverage                              | [nyc](https://github.com/istanbuljs/nyc)                     |                                                              |
-| 单元    | 模拟工具       | 模拟浏览器 dom                             | [JsDom](https://github.com/jsdom/jsdom)                      |                                                              |
-| 端到端  |                | e2e                                        | [Nightwatch](http://nightwatchjs.org/)、[UI Recorder](https://github.com/alibaba/uirecorder) | [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs) |
-| ChatOps | 自动化运维     | 查看各项指标；自动发布；发布报告等         | [Hubot](https://hubot.github.com/)                           | Lita,Err，[钉钉机器人](https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1) |
+项目接入持续集成在多人开发同一个仓库时候能起到很大的用途，每次push都能自动触发测试，测试没过会发生告警。
+
+如果需求采用 Issues+Merge Request 来管理，每个需求一个Issue + 一个分支，开发完成后提交 Merge Request ，由项目 Owner 负责合并，项目质量将更有保障。
+
+| 级别    | 类别           | 作用                                           | 选型                                                   | 同类                                                         |
+| ------- | -------------- | ---------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------ |
+| -       | 代码审查       | 统一团队代码风格                               | [Prettier](https://github.com/prettier/prettier)       |                                                              |
+| -       | 静态代码审查   | 现代 CSS 格式验证工具                          | [Stylelint](https://github.com/stylelint/stylelint)    |                                                              |
+| -       | 静态代码审查   | TypeScript 格式验证工具                        | [Tslint](https://palantir.github.io/tslint/)           |                                                              |
+| 单元    | 测试框架       | test runner, snapshots, display, and watch     | [AVA](https://github.com/avajs/ava)                    | Jest, Wallaby.js, Mocha                                      |
+| 单元    | 断言库         | assertions functions                           | [enzyme](https://github.com/airbnb/enzyme)             | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai |
+| 单元    | Mock工具       | mocks, spies, and stubs                        | [sinon](http://sinonjs.org/)                           | [testdouble.js](https://github.com/testdouble/testdouble.js) |
+| 单元    | 测试覆盖率工具 | code coverage                                  | [nyc](https://github.com/istanbuljs/nyc)               | [Coveralls](https://coveralls.io/)                           |
+| 单元    | 模拟工具       | 模拟浏览器 dom                                 | [JsDom](https://github.com/jsdom/jsdom)                |                                                              |
+| -       | -              | 持续集成服务                                   | [Travis](https://travis-ci.org/)，                     | [CircleCI](https://circleci.com/), [Jenkins](https://jenkins.io/) |
+| 端到端  |                | e2e                                            | [UI Recorder](https://github.com/alibaba/uirecorder) + | [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs), [Nightwatch](http://nightwatchjs.org/) |
+| -       | -              | -                                              | -                                                      | -                                                            |
+| ChatOps | 自动化运维     | 查看各项指标；自动发布；发布报告等             | [Hubot](https://hubot.github.com/)                     | Lita,Err，[钉钉机器人](https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1) |
+| -       | 合规审查       | 开源代码合规化；自动追踪开源代码的授权许可协议 | [Fossa](https://fossa.io/)                             |                                                              |
 
 ## 踩过的坑
 
@@ -172,3 +178,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 1. 与测试团队整体测试的接入；
 2. 对开发者更加友好，降低用例的创建和维护成本；
 3. 从投入产出角度，减少人工干预环节。
+
+## 许可
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FTingGe%2Fava-testing.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FTingGe%2Fava-testing?ref=badge_large)
