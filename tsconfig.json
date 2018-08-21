@@ -1,36 +1,22 @@
 {
   "compilerOptions": {
-    "outDir": "built",
+    "baseUrl": "./src",
+    "types": ["node"],
     "module": "commonjs",
-    "target": "es5",
-    "lib": ["es6", "dom"],
-    "sourceMap": true,
-    "allowJs": true,
-    "jsx": "react",
     "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": false,
-    "noImplicitAny": true,
-    "strictNullChecks": false,
-    "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
-    "baseUrl": ".",
     "declaration": false,
-    "preserveConstEnums": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "noEmitHelpers": true,
-    "importHelpers": true,
-    "noEmitOnError": true,
+    "noImplicitAny": false,
     "pretty": true,
-    "allowSyntheticDefaultImports": true
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "sourceMap": true,
+    "jsx": "react",
+    "allowJs": true,
+    "outDir": "./dist"
   },
-  "include": ["./src/**/*", "./test/**/*"],
-  "exclude": [
-    "node_modules",
-    "built",
-    "build",
-    "webpack"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "src/**/*.spec.*"]
 }

@@ -1,4 +1,4 @@
-# 基于 ava 和 UI Recorder 的 React Redux 前端自动化测试实践
+# React Redux 前端研发品质实践
 
 [![codebeat badge](https://codebeat.co/badges/5e895c71-88f8-4600-b522-ad9c5fd0214e)](https://codebeat.co/projects/github-com-tingge-ava-testing-master)
 [![Build Status](https://travis-ci.org/TingGe/ava-testing.svg?branch=master)](https://travis-ci.org/TingGe/ava-testing) [![Coverage Status](https://coveralls.io/repos/github/TingGe/ava-testing/badge.svg)](https://coveralls.io/github/TingGe/ava-testing) [![CircleCI](https://circleci.com/gh/TingGe/ava-testing/tree/master.svg?style=svg)](https://circleci.com/gh/TingGe/ava-testing/tree/master)
@@ -8,14 +8,12 @@
 
 > 最佳适用于 `TypeScript + Scss/Less + React + Redux +  React Dom + React Router + React Thunk` 技术栈的前端。
 
-react react-redux rematch, reach
-
 一个针对 TypScript 源码的 React Redux 项目的模版项目。
 
 - 采用  React 和 TypeScript；
-- 代码静态审查：husky + lint-staged + tslint + prettier + stylelint + imagemin-lint-staged
-- 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式；
-- Redux 做状态管理。
+- Redux 做状态管理；
+- 代码静态审查：husky + lint-staged + tslint + prettier + stylelint + imagemin-lint-staged；
+- 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式。
 
 ### 代码静态审查
 
@@ -84,8 +82,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 可参考标准
 
-- 自动化收益 = 有效迭代次数 x 手工测试的成本
-- 自动化成本 = 脚本创建成本 + 维护次数 x 维护调试成本 + 脚本失败次数 x 脚本排错成本
+- 自动化收益 = 迭代次数 * 全手动执行成本 - 首次自动化成本 - 维护次数 * 维护成本
 
 本项目采用的自动化测试技术方案
 
@@ -120,25 +117,36 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 ## 对比的一些工具
 
-- AVA： 相对于 Mocha 执行更快，测试环境隔离、支持原子测试；相对于 Jest 组合更加灵活
-- Mocha + Chai：相对较为成熟
-- Jest：[Create React App](https://github.com/facebookincubator/create-react-app) 、 [Microsoft/TypeScript-React-Starter](Microsoft/TypeScript-React-Starter) 和 [Ant Design](https://github.com/ant-design/ant-design-pro) 中内置的推荐方案，是个一体化方案
+- AVA： 相对于 Mocha 执行更快，测试环境隔离、支持原子测试；相对于 Jest 组合更加灵活；
+- Mocha + Chai：相对较为成熟；
+- Jest：[Create React App](https://github.com/facebookincubator/create-react-app) 、 [Microsoft/TypeScript-React-Starter](Microsoft/TypeScript-React-Starter) 和 [Ant Design](https://github.com/ant-design/ant-design-pro) 中推荐方案，内置断言、测试覆盖率工具，是个一体化方案、开箱即用。
 
 
 
-| 测试工具类型                                   | 选型                                       | 同类                                       |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| **test runner**,**snapshots**,**display, and watch** | [AVA](https://github.com/avajs/ava)      | Jest, Wallaby.js                         |
-| **assertions functions**                 | [enzyme](https://github.com/airbnb/enzyme) | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai |
-| **mocks, spies, and stubs**              | [sinon](http://sinonjs.org/)             | [testdouble.js](https://github.com/testdouble/testdouble.js) |
-| **code coverage**                        | [nyc](https://github.com/istanbuljs/nyc) |                                          |
-| **e2e**                                  | [Nightwatch](http://nightwatchjs.org/)、[UI Recorder](https://github.com/alibaba/uirecorder) | [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs) |
-| **模拟浏览器 dom**                            | [JsDom](https://github.com/jsdom/jsdom)  |                                          |
+项目接入持续集成在多人开发同一个仓库时候能起到很大的用途，每次push都能自动触发测试，测试没过会发生告警。
+
+如果需求采用 Issues+Merge Request 来管理，每个需求一个Issue + 一个分支，开发完成后提交 Merge Request ，由项目 Owner 负责合并，项目质量将更有保障。
+
+| 级别    | 类别           | 作用                                           | 选型                                                   | 同类                                                         |
+| ------- | -------------- | ---------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------ |
+| -       | 代码审查       | 统一团队代码风格                               | [Prettier](https://github.com/prettier/prettier)       |                                                              |
+| -       | 静态代码审查   | 现代 CSS 格式验证工具                          | [Stylelint](https://github.com/stylelint/stylelint)    |                                                              |
+| -       | 静态代码审查   | TypeScript 格式验证工具                        | [Tslint](https://palantir.github.io/tslint/)           |                                                              |
+| 单元    | 测试框架       | test runner, snapshots, display, and watch     | [AVA](https://github.com/avajs/ava)                    | Jest, Wallaby.js, Mocha                                      |
+| 单元    | 断言库         | assertions functions                           | [enzyme](https://github.com/airbnb/enzyme)             | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai |
+| 单元    | Mock工具       | mocks, spies, and stubs                        | [sinon](http://sinonjs.org/)                           | [testdouble.js](https://github.com/testdouble/testdouble.js) |
+| 单元    | 测试覆盖率工具 | code coverage                                  | [nyc](https://github.com/istanbuljs/nyc)               | [Coveralls](https://coveralls.io/)                           |
+| 单元    | 模拟工具       | 模拟浏览器 dom                                 | [JsDom](https://github.com/jsdom/jsdom)                |                                                              |
+| -       | -              | 持续集成服务                                   | [Travis](https://travis-ci.org/)，                     | [CircleCI](https://circleci.com/), [Jenkins](https://jenkins.io/) |
+| 端到端  |                | e2e                                            | [UI Recorder](https://github.com/alibaba/uirecorder) + | [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs), [Nightwatch](http://nightwatchjs.org/) |
+| -       | -              | -                                              | -                                                      | -                                                            |
+| ChatOps | 自动化运维     | 查看各项指标；自动发布；发布报告等             | [Hubot](https://hubot.github.com/)                     | Lita,Err，[钉钉机器人](https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1) |
+| -       | 合规审查       | 开源代码合规化；自动追踪开源代码的授权许可协议 | [Fossa](https://fossa.io/)                             |                                                              |
 
 ## 踩过的坑
 
 - package.json 中包依赖版本锁定管理：不要忽略 warning，关注 [Enzyme Working with React 16](http://airbnb.io/enzyme/docs/installation/react-16.html) 等配置文档
-- ignore-styles 忽略样式和资源文件：需要 hook node 的 require， 因此将 setup.ts 改成 setup.js 
+- ignore-styles 忽略样式和资源文件：需要 hook node 的 require， 因此将 setup.ts 改成 setup.js
 
 ### API Docs
 
@@ -172,6 +180,6 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 2. 对开发者更加友好，降低用例的创建和维护成本；
 3. 从投入产出角度，减少人工干预环节。
 
+## 许可 License
 
-## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FTingGe%2Fava-testing.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FTingGe%2Fava-testing?ref=badge_large)
