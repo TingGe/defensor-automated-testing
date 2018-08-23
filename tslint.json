@@ -13,6 +13,7 @@
     "jsx-boolean-value": [true, "never"],
     "jsx-no-lambda": false,
     "no-angle-bracket-type-assertion": false,
-    "no-console": false
+    "no-console": false,
+    "ordered-imports":false
   }
 }

@@ -68,24 +68,19 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 本项目采用的自动化测试技术方案
 
-1. React Redux 测试：typescript + ava + enzyme(sinon、redux-mock-store) 组合
-2. 覆盖率：nyc
-3. 集成测试： [UI Recorder](https://github.com/alibaba/uirecorder) 或 Nightwatch
+1. React Redux 测试：typescript + Jest + enzyme(sinon、redux-mock-store) 组合
+2. 集成测试： [UI Recorder](https://github.com/alibaba/uirecorder)
 
 
 ### 组件：React  + Redux
 
-支持 watch 模式；原子测试
+支持 watch 模式
 
 1. actions 测试
 2. reducer 测试
 3. select 测试
 4. React + Redux 测试
-5. 输出报告
-
-### 覆盖率
-
-- nyc
+5. 覆盖率和输出报告
 
 ### E2E 测试
 
@@ -109,21 +104,21 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 如果需求采用 Issues+Merge Request 来管理，每个需求一个Issue + 一个分支，开发完成后提交 Merge Request ，由项目 Owner 负责合并，项目质量将更有保障。
 
-| 级别    | 类别           | 作用                                           | 选型                                                   | 同类                                                         |
-| ------- | -------------- | ---------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------ |
-| -       | 代码审查       | 统一团队代码风格                               | [Prettier](https://github.com/prettier/prettier)       |                                                              |
-| -       | 静态代码审查   | 现代 CSS 格式验证工具                          | [Stylelint](https://github.com/stylelint/stylelint)    |                                                              |
-| -       | 静态代码审查   | TypeScript 格式验证工具                        | [Tslint](https://palantir.github.io/tslint/)           |                                                              |
-| 单元    | 测试框架       | test runner, snapshots, display, and watch     | [AVA](https://github.com/avajs/ava)                    | Jest, Wallaby.js, Mocha                                      |
-| 单元    | 断言库         | assertions functions                           | [enzyme](https://github.com/airbnb/enzyme)             | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai |
-| 单元    | Mock工具       | mocks, spies, and stubs                        | [sinon](http://sinonjs.org/)                           | [testdouble.js](https://github.com/testdouble/testdouble.js) |
-| 单元    | 测试覆盖率工具 | code coverage                                  | [nyc](https://github.com/istanbuljs/nyc)               | [Coveralls](https://coveralls.io/)                           |
-| 单元    | 模拟工具       | 模拟浏览器 dom                                 | [JsDom](https://github.com/jsdom/jsdom)                |                                                              |
-| -       | -              | 持续集成服务                                   | [Travis](https://travis-ci.org/)，                     | [CircleCI](https://circleci.com/), [Jenkins](https://jenkins.io/) |
-| 端到端  |                | e2e                                            | [UI Recorder](https://github.com/alibaba/uirecorder) + | [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs), [Nightwatch](http://nightwatchjs.org/) |
-| -       | -              | -                                              | -                                                      | -                                                            |
-| ChatOps | 自动化运维     | 查看各项指标；自动发布；发布报告等             | [Hubot](https://hubot.github.com/)                     | Lita,Err，[钉钉机器人](https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1) |
-| -       | 合规审查       | 开源代码合规化；自动追踪开源代码的授权许可协议 | [Fossa](https://fossa.io/)                             |                                                              |
+| 级别    | 类别           | 作用                                           | 选型                                                         | 同类                                                         |
+| ------- | -------------- | ---------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| -       | 代码审查       | 统一团队代码风格                               | [Prettier](https://github.com/prettier/prettier)             |                                                              |
+| -       | 静态代码审查   | 现代 CSS 格式验证工具                          | [Stylelint](https://github.com/stylelint/stylelint)          |                                                              |
+| -       | 静态代码审查   | TypeScript 格式验证工具                        | [Tslint](https://palantir.github.io/tslint/)                 |                                                              |
+| 单元    | 测试框架       | test runner, snapshots, display, and watch     | [Jest](https://jestjs.io/) 内置的 Jasmine                    | [AVA](https://github.com/avajs/ava), Mocha, Wallaby.js,      |
+| 单元    | 断言库         | assertions functions                           | [enzyme](https://github.com/airbnb/enzyme) + Jest 的 Matchers | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai， |
+| 单元    | Mock工具       | mocks, spies, and stubs                        | Jest 的 Mock Functions                                       | [testdouble.js](https://github.com/testdouble/testdouble.js), [sinon](http://sinonjs.org/), |
+| 单元    | 测试覆盖率工具 | code coverage                                  | Jest 内置的 Istanbul                                         | [Coveralls](https://coveralls.io/), [nyc](https://github.com/istanbuljs/nyc) |
+| 单元    | 模拟工具       | 模拟浏览器 dom                                 | Jest 内置的 JSDOM                                            | [JsDom](https://github.com/jsdom/jsdom)                      |
+| -       | -              | 持续集成服务                                   | [Travis](https://travis-ci.org/)，                           | [CircleCI](https://circleci.com/), [Jenkins](https://jenkins.io/) |
+| 端到端  |                | e2e                                            | [UI Recorder](https://github.com/alibaba/uirecorder) + [F2etest](https://github.com/alibaba/f2etest) + Docker | [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs), [Nightwatch](http://nightwatchjs.org/) |
+| -       | -              | -                                              | -                                                            | -                                                            |
+| ChatOps | 自动化运维     | 查看各项指标；自动发布；发布报告等             | [Hubot](https://hubot.github.com/)                           | Lita,Err，[钉钉机器人](https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1) |
+| -       | 合规审查       | 自动追踪开源代码的授权许可协议；开源代码合规化 | [Fossa](https://fossa.io/)                                   |                                                              |
 
 ## 踩过的坑
 
@@ -132,7 +127,6 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 ### API Docs
 
-- AVA: https://github.com/avajs/ava#api
 - Enzyme:  https://github.com/airbnb/enzyme/tree/master/docs/api
 - Sinon：http://sinonjs.org/releases/v4.1.2/
 
@@ -147,8 +141,6 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 - [Using enzyme with JSDOM](http://airbnb.io/enzyme/docs/guides/jsdom.html)
 - [Antd Pro UI Test](https://pro.ant.design/docs/ui-test#单元测试)
 - [Automated React Component Testing with Jest](https://www.distelli.com/docs/tutorials/test-your-react-component-with-jest/)
-
-
 
 ## 重点解答
 

@@ -16,3 +16,4 @@ yarn-error.log*
 .generate_config.json
 package-lock.json
 *.orig
+jest-test-results.json
