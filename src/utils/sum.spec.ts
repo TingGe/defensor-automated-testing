@@ -1,27 +1,27 @@
 import sum from './sum';
 
-describe('test1', () => {
+describe('sum equal ', () => {
   beforeAll(() => {
-    console.log('test1 before all');
+    console.log('sum before all');
   });
 
   afterAll(() => {
-    console.log('test1 after all');
+    console.log('sum after all');
   });
 
   beforeEach(() => {
-    console.log('test1 before each');
+    console.log('sum before each');
   });
 
   afterEach(() => {
-    console.log('test1 after each');
+    console.log('sum after each');
   });
 
-  it('test sum', () => {
+  it('test 1 + 2 = 3 ', () => {
     expect(sum(1, 2)).toBe(3);
   });
 
-  it('test mutil', () => {
+  it('test 2 + 3 = 5', () => {
     expect(sum(2, 3)).toEqual(5);
   });
 });
