@@ -17,7 +17,6 @@
     "build:server": "cross-env webpack --progress --colors --config config/server.config.js",
     "build:prod": "cross-env webpack --progress --colors --mode production --config config/client.config.js",
     "lint": "tslint --project tsconfig.json",
-    "precommit": "lint-staged",
     "prebuild": "npm test",
     "lint:fix": "prettier --write './src/**/*.{ts,tsx,js,scss}' && tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'",
     "coverage": "nyc report --reporter=text-lcov | coveralls",

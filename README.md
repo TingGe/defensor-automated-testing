@@ -11,7 +11,7 @@
 
 - 采用 `TypeScript + Scss/Less + React + Redux +  React Dom + React Router + React Thunk` 技术栈
 - 代码静态审查：husky + lint-staged + tslint + prettier + stylelint + imagemin-lint-staged
-- 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式
+- 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式。husky + lint-staged + jest
 
 ### 代码静态审查
 
@@ -114,6 +114,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 | 单元    | Mock工具       | mocks, spies, and stubs                        | Jest 的 Mock Functions                                       | [testdouble.js](https://github.com/testdouble/testdouble.js), [sinon](http://sinonjs.org/), |
 | 单元    | 测试覆盖率工具 | code coverage                                  | Jest 内置的 Istanbul                                         | [Coveralls](https://coveralls.io/), [nyc](https://github.com/istanbuljs/nyc) |
 | 单元    | 模拟工具       | 模拟浏览器 dom                                 | Jest 内置的 JSDOM                                            | [JsDom](https://github.com/jsdom/jsdom)                      |
+|         |                | 与 Storybook 集成                              |                                                              |                                                              |
 | -       | -              | 持续集成服务                                   | [Travis](https://travis-ci.org/)，                           | [CircleCI](https://circleci.com/), [Jenkins](https://jenkins.io/) |
 | 端到端  |                | e2e                                            | [UI Recorder](https://github.com/alibaba/uirecorder) + [F2etest](https://github.com/alibaba/f2etest) + Docker | [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs), [Nightwatch](http://nightwatchjs.org/) |
 | -       | -              | -                                              | -                                                            | -                                                            |
@@ -132,6 +133,8 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 ## 参考
 
+- [使用Jest进行React单元测试](https://www.codetd.com/article/2675508)
+- [聊聊前端开发的测试](https://www.diycode.cc/topics/716)
 - [JavaScript 单元测试框架大乱斗：Jasmine、Mocha、AVA、Tape 以及 Jest](https://raygun.com/blog/javascript-unit-testing-frameworks/)
 - [基于 JavaScript 的 Web 应用的端到端测试工具对比](https://mo.github.io/2017/07/20/javascript-e2e-integration-testing.html)
 - [别再加端到端集成测试了，快换契约测试吧](http://insights.thoughtworks.cn/contract-test/)
