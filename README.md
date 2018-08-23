@@ -135,6 +135,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 - [使用Jest进行React单元测试](https://www.codetd.com/article/2675508)
 - [聊聊前端开发的测试](https://www.diycode.cc/topics/716)
+- [如何进行前端自动化测试？](https://www.zhihu.com/question/29922082/answer/46141819)
 - [JavaScript 单元测试框架大乱斗：Jasmine、Mocha、AVA、Tape 以及 Jest](https://raygun.com/blog/javascript-unit-testing-frameworks/)
 - [基于 JavaScript 的 Web 应用的端到端测试工具对比](https://mo.github.io/2017/07/20/javascript-e2e-integration-testing.html)
 - [别再加端到端集成测试了，快换契约测试吧](http://insights.thoughtworks.cn/contract-test/)
