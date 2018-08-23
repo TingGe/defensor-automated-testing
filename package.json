@@ -20,7 +20,7 @@
     "prebuild": "npm test",
     "lint:fix": "prettier --write './src/**/*.{ts,tsx,js,scss}' && tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'",
     "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test:coverage": "jest --coverage | coveralls",
     "test:update-snapshot": "jest -u",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "precommit": "lint-staged",
@@ -30,6 +30,9 @@
     "predeploy": "npm run build:storybook"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.1.13",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
+    "@types/enzyme-to-json": "^1.5.2",
     "@types/jest": "^23.3.1",
     "@types/react": "^16.4.11",
     "@types/react-dom": "^16.0.7",
@@ -41,6 +44,7 @@
     "awesome-typescript-loader": "^5.2.0",
     "compression-webpack-plugin": "^1.1.11",
     "copy-webpack-plugin": "^4.5.2",
+    "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
     "enzyme": "^3.4.4",
     "enzyme-adapter-react-16": "^1.2.0",
@@ -68,10 +72,7 @@
     "webpack-cli": "^3.1.0",
     "webpack-dev-middleware": "^3.1.3",
     "webpack-hot-middleware": "^2.22.3",
-    "webpack-node-externals": "^1.7.2",
-    "@types/enzyme": "^3.1.13",
-    "@types/enzyme-adapter-react-16": "^1.0.3",
-    "@types/enzyme-to-json": "^1.5.2"
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "@rematch/core": "^0.6.0",

@@ -4,6 +4,14 @@ node_js:
   - "10"
 install:
   - npm install
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm install
 script:
-  - npm run build:prod
   - npm run test:coverage
+  # - npm run dev
+  # - npm run build
+after_script:
+  # - npm run coverage
