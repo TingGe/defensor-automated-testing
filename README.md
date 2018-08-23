@@ -1,7 +1,7 @@
 # React Redux 前端研发品质实践
 
 [![codebeat badge](https://codebeat.co/badges/7bd2dadc-c77b-4db9-9790-e8a5f83a8dc8)](https://codebeat.co/projects/github-com-tingge-defensor-automated-testing-master)
- [![Build Status](https://travis-ci.org/TingGe/ava-testing.svg?branch=master)](https://travis-ci.org/TingGe/ava-testing)  [![Coverage Status](https://coveralls.io/repos/github/TingGe/defensor-automated-testing/badge.svg?branch=master)](https://coveralls.io/github/TingGe/defensor-automated-testing?branch=master) [![CircleCI](https://circleci.com/gh/TingGe/ava-testing/tree/master.svg?style=svg)](https://circleci.com/gh/TingGe/ava-testing/tree/master)
+ [![Build Status](https://travis-ci.org/TingGe/defensor-automated-testing.svg?branch=master)](https://travis-ci.org/TingGe/defensor-automated-testing)  [![Coverage Status](https://coveralls.io/repos/github/TingGe/defensor-automated-testing/badge.svg?branch=master)](https://coveralls.io/github/TingGe/defensor-automated-testing?branch=master) [![CircleCI](https://circleci.com/gh/TingGe/ava-testing/tree/master.svg?style=svg)](https://circleci.com/gh/TingGe/ava-testing/tree/master)
 
 ![](https://raw.githubusercontent.com/TingGe/defensor-automated-testing/master/assets/image/testing-structure.png)
 
