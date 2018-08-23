@@ -2,6 +2,6 @@
 
 exports[`NotFound NotFound render 1`] = `
 <span>
-  404 Not Found!
+  404 Not Found
 </span>
 `;
