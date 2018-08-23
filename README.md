@@ -9,9 +9,9 @@
 
 一个 React Redux 项目的模版项目。
 
-- 采用 `TypeScript + Scss/Less + React + Redux +  React Dom + React Router + React Thunk` 技术栈
-- 代码静态审查：husky + lint-staged + tslint + prettier + stylelint + imagemin-lint-staged
-- 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式。husky + lint-staged + jest
+- 采用 `TypeScript + Scss/Less + React + Redux +  React Dom + React Router + React Thunk` 技术栈；
+- 代码静态审查：husky + lint-staged + tslint + prettier + stylelint + imagemin-lint-staged；
+- 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式，husky + lint-staged + jest。
 
 ### 代码静态审查
 
@@ -68,19 +68,18 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 本项目采用的自动化测试技术方案
 
-1. React Redux 测试：typescript + Jest + enzyme(sinon、redux-mock-store) 组合
+1. React Redux 测试：typescript + Jest + enzyme 组合
 2. 集成测试： [UI Recorder](https://github.com/alibaba/uirecorder)
 
 
 ### 组件：React  + Redux
 
-支持 watch 模式
-
-1. actions 测试
-2. reducer 测试
-3. select 测试
-4. React + Redux 测试
-5. 覆盖率和输出报告
+1. 支持 watch 模式
+2. actions 测试
+3. reducer 测试
+4. select 测试
+5. React + Redux 测试
+6. 覆盖率和输出报告
 
 ### E2E 测试
 
@@ -90,13 +89,13 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 2. 测试脚本：测试代码的 Github 仓库
 3. 持续集成（CI）服务、用例、测试计划、任务分派和缺陷管理：Aone
 4. 全球化（G11N）自动测试报告：ACGT
-5. 业务异常报告：智能质量引擎
+5. 容器化： Docker
 
 ## 对比的一些工具
 
-- AVA： 相对于 Mocha 执行更快，测试环境隔离、支持原子测试；相对于 Jest 组合更加灵活；
-- Mocha + Chai：相对较为成熟；
-- Jest：[Create React App](https://github.com/facebookincubator/create-react-app) 、 [Microsoft/TypeScript-React-Starter](Microsoft/TypeScript-React-Starter) 和 [Ant Design](https://github.com/ant-design/ant-design-pro) 中推荐方案，内置断言、测试覆盖率工具，是个一体化方案、开箱即用。提供测试环境Dom API支持、合理的默认值、预处理代码和默认执行并行测试在内的特性。
+- Jest：[Create React App](https://github.com/facebookincubator/create-react-app) 、 [Microsoft/TypeScript-React-Starter](Microsoft/TypeScript-React-Starter) 和 [Ant Design](https://github.com/ant-design/ant-design-pro) 中推荐方案，内置断言、测试覆盖率工具，是个一体化方案、开箱即用。提供测试环境Dom API支持、合理的默认值、预处理代码和默认执行并行测试在内的特性；
+- AVA： 相对于 Mocha 执行更快，测试环境隔离、支持原子测试，相对于 Jest 组合更加灵活但最佳实践的开发工具、生态链支持稍有欠缺；
+- Mocha + Chai：相对较为成熟。
 
 
 
@@ -114,12 +113,12 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 | 单元    | Mock工具       | mocks, spies, and stubs                        | Jest 的 Mock Functions                                       | [testdouble.js](https://github.com/testdouble/testdouble.js), [sinon](http://sinonjs.org/), |
 | 单元    | 测试覆盖率工具 | code coverage                                  | Jest 内置的 Istanbul                                         | [Coveralls](https://coveralls.io/), [nyc](https://github.com/istanbuljs/nyc) |
 | 单元    | 模拟工具       | 模拟浏览器 dom                                 | Jest 内置的 JSDOM                                            | [JsDom](https://github.com/jsdom/jsdom)                      |
-|         |                | 与 Storybook 集成                              |                                                              |                                                              |
+| -       | -              | 与 Storybook 集成                              | -                                                            | -                                                            |
 | -       | -              | 持续集成服务                                   | [Travis](https://travis-ci.org/)，                           | [CircleCI](https://circleci.com/), [Jenkins](https://jenkins.io/) |
 | 端到端  |                | e2e                                            | [UI Recorder](https://github.com/alibaba/uirecorder) + [F2etest](https://github.com/alibaba/f2etest) + Docker | [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs), [Nightwatch](http://nightwatchjs.org/) |
 | -       | -              | -                                              | -                                                            | -                                                            |
 | ChatOps | 自动化运维     | 查看各项指标；自动发布；发布报告等             | [Hubot](https://hubot.github.com/)                           | Lita,Err，[钉钉机器人](https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1) |
-| -       | 合规审查       | 自动追踪开源代码的授权许可协议；开源代码合规化 | [Fossa](https://fossa.io/)                                   |                                                              |
+| -       | 合规审查       | 自动追踪开源代码的授权许可协议；开源代码合规化 | [Fossa](https://fossa.io/)                                   | -                                                            |
 
 ## 踩过的坑
 
