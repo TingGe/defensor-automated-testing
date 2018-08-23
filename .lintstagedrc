@@ -1,0 +1,27 @@
+{
+  "ignore": [
+    "build/*",
+    "node_modules"
+  ],
+  "linters": {
+    "{src,docs}/**/*.{ts,tsx}": [
+      "prettier --parser typescript --write",
+      "tslint -c tslint.json --fix",
+      "tslint -c tslint.json",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "prettier --write",
+      "stylelint -q -s scss --fix",
+      "git add"
+    ],
+    "*.{png,jpeg,jpg,gif,svg}": [
+      "imagemin-lint-staged",
+      "git add"
+    ],
+    "src/components/**/*.{ts,tsx}": [
+      "jest --findRelatedTests --config jest.config.js",
+      "git add"
+    ]
+  }
+}

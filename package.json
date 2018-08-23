@@ -22,6 +22,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test": "jest",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
+    "precommit": "lint-staged",
     "test:watch": "npm run test:generate-output -- --watch",
     "prebuild:storybook": "npm run test:generate-output",
     "build:storybook": "build-storybook -c .storybook -o build/",
@@ -91,33 +92,6 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "ignore": [
-      "build/*",
-      "node_modules"
-    ],
-    "linters": {
-      "{src,docs}/**/*.{ts,tsx}": [
-        "prettier --parser typescript --write",
-        "tslint -c tslint.json --fix",
-        "tslint -c tslint.json",
-        "git add"
-      ],
-      "*.{css,scss}": [
-        "prettier --write",
-        "stylelint -q -s scss --fix",
-        "git add"
-      ],
-      "*.{png,jpeg,jpg,gif,svg}": [
-        "imagemin-lint-staged",
-        "git add"
-      ],
-      "src/components/**/*.{ts,tsx}": [
-        "jest --findRelatedTests --config jest.config.js",
-        "git add"
-      ]
     }
   },
   "jest": {
