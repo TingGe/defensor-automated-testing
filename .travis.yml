@@ -6,4 +6,4 @@ install:
   - npm install
 script:
   - npm run build:prod
-  - npm test
+  - npm run test:coverage
