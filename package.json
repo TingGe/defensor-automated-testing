@@ -21,6 +21,7 @@
     "lint:fix": "prettier --write './src/**/*.{ts,tsx,js,scss}' && tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test": "jest",
+    "test:update-snapshot": "jest -u",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "precommit": "lint-staged",
     "test:watch": "npm run test:generate-output -- --watch",
