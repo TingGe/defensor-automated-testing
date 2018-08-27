@@ -123,6 +123,16 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 | ChatOps | 自动化运维     | 查看各项指标；自动发布；发布报告等             | [Hubot](https://hubot.github.com/)                           | Lita,Err，[钉钉机器人](https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1) |
 | -       | 合规审查       | 自动追踪开源代码的授权许可协议；开源代码合规化 | [Fossa](https://fossa.io/)                                   | -                                                            |
 
+## 最佳实践
+
+### Todo： 
+
+自动化生成单元测试代码思路，可通过 generator 方式批量生成。以下是批处理 js 脚本的流程：
+
+1. 配置 `template.spec.tsx` 测试模版，变量部分以占位符方式预留
+2. 扫描 components 目录 `**/*.tsx` 文件
+3. 判断同目录下是否有 `__test__` 目录，如有则忽略；否则，创建 `__test__` 目录，并以匹配到的 `.tsx` 文件名在 `__test__` 目录创建对应`.spec.tsx` ，内容用替换占位符后的 `template.spec.tsx` 。
+
 ## 踩过的坑
 
 - package.json 中包依赖版本锁定管理：不要忽略 warning，关注 [Enzyme Working with React 16](http://airbnb.io/enzyme/docs/installation/react-16.html) 等配置文档
