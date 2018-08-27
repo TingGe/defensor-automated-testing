@@ -13,14 +13,14 @@
 - 代码静态审查：husky + lint-staged + tslint + prettier + stylelint + imagemin-lint-staged；
 - 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式，husky + lint-staged + jest。
 
-### 代码静态审查
+## 代码静态审查
 
 1. Git hook：husky + lint-staged
 2. ts 和 tsx 合规检查和修复：tslint + prettier
 3. scss 和 css 合规检查和修复：stylelint
 4. 图片和 svg 等压缩：imagemin-lint-staged
 
-#### prettier 执行方式
+### prettier 执行方式
 
 方式一：VS Code 的 [prettier-vscode 插件](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)提示
 
@@ -32,7 +32,7 @@
 npx prettier --write './src/**/*.{ts,tsx,js,scss}'
 ```
 
-#### tslint 执行方式
+### tslint 执行方式
 
 方式一：VS Code 的 [vscode-tslint 插件](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)提示
 
@@ -44,7 +44,7 @@ npx prettier --write './src/**/*.{ts,tsx,js,scss}'
 tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'
 ```
 
-#### stylelint 执行方式
+### stylelint 执行方式
 
 方式一：VS Code 的 [stylelint 插件](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint)提示
 
@@ -60,9 +60,11 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 ## 测试
 
-#### 关于是否需要自动化测试？
+### 关于是否需要自动化测试？
 
-参考标准
+自动化测试的长远价值高于手工，所以如果自动化的性价比已经开始高于手工，就可以着手去做。项目后期和维护期，自动化介入为回归测试做准备，可以最大化自动化收益。
+
+参考价值公式
 
 - 自动化收益 = 迭代次数 * 全手动执行成本 - 首次自动化成本 - 维护次数 * 维护成本
 
@@ -152,7 +154,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 2. 各组合适用的应用场景；
 3. 测试的开发体验。
 
-### 未来的可能
+## 未来的可能
 
 1. 与测试团队整体测试的接入；
 2. 对开发者更加友好，降低用例的创建和维护成本；
