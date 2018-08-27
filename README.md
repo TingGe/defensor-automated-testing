@@ -105,9 +105,10 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 | 级别    | 类别           | 作用                                           | 选型                                                         | 同类                                                         |
 | ------- | -------------- | ---------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| -       | 代码审查       | 统一团队代码风格                               | [Prettier](https://github.com/prettier/prettier)             |                                                              |
-| -       | 静态代码审查   | 现代 CSS 格式验证工具                          | [Stylelint](https://github.com/stylelint/stylelint)          |                                                              |
-| -       | 静态代码审查   | TypeScript 格式验证工具                        | [Tslint](https://palantir.github.io/tslint/)                 |                                                              |
+| -       | 静态代码审查   | 统一团队代码风格                               | [Prettier](https://github.com/prettier/prettier)             | -                                                            |
+| -       | 静态代码审查   | 现代 CSS 格式验证工具                          | [Stylelint](https://github.com/stylelint/stylelint)          | -                                                            |
+| -       | 静态代码审查   | TypeScript 格式验证工具                        | [Tslint](https://palantir.github.io/tslint/)                 | -                                                            |
+| -       | 静态代码审查   | 安全审计，依赖项跟踪                           | npm audit fix                                                | [GreenKeeper](https://github.com/greenkeeperio/greenkeeper), [Libraries.io](https://github.com/librariesio/libraries.io) |
 | 单元    | 测试框架       | test runner, snapshots, display, and watch     | [Jest](https://jestjs.io/) 内置的 Jasmine                    | [AVA](https://github.com/avajs/ava), Mocha, Wallaby.js,      |
 | 单元    | 断言库         | assertions functions                           | [enzyme](https://github.com/airbnb/enzyme) + Jest 的 Matchers | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai， |
 | 单元    | Mock工具       | mocks, spies, and stubs                        | Jest 的 Mock Functions                                       | [testdouble.js](https://github.com/testdouble/testdouble.js), [sinon](http://sinonjs.org/), |
