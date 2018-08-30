@@ -25,11 +25,14 @@
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "precommit": "lint-staged",
     "test:watch": "npm run test:generate-output -- --watch",
+    "commitmsg": "commitlint -E GIT_PARAMS",
     "prebuild:storybook": "npm run test:generate-output",
     "build:storybook": "build-storybook -c .storybook -o build/",
     "predeploy": "npm run build:storybook"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.1.1",
+    "@commitlint/config-conventional": "^7.1.1",
     "@types/enzyme": "^3.1.13",
     "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/enzyme-to-json": "^1.5.2",
