@@ -13,6 +13,47 @@
 - 代码静态审查：husky + lint-staged + tslint + prettier + stylelint + imagemin-lint-staged；
 - 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式，husky + lint-staged + jest。
 
+## Git 规范化注解向导工具
+
+> #### Commit 规范作用
+>
+> 1.提供更多的信息，方便排查与回退
+> 2.过滤关键字，迅速定位
+> 3.方便生成文档
+
+### 规范
+
+```git
+<type>(<scope>): <subject>
+```
+
+- type 用于说明 `commit` 类别，只允许使用下面7个标识。
+
+  ```git
+  feat：新功能（feature）
+  fix：修补bug
+  docs：文档（documentation）
+  style： 格式（不影响代码运行的变动）
+  refactor：重构（即不是新增功能，也不是修改bug的代码变动）
+  test：增加测试
+  chore：构建过程或辅助工具的变动
+  ```
+
+- scope 用于说明 `commit` 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同。
+
+- subject 是 `commit` 目的的简短描述，不超过50个字符。
+
+  ```git
+  1.以动词开头，使用第一人称现在时，比如change，而不是changed或changes
+  2.第一个字母小写
+  3.结尾不加句号（.）
+  ```
+
+### 执行方式
+
+- 校验 commit 规范：借助 [husky](https://github.com/typicode/husky) 在 commit 时自动校验。
+- 生成 Change log：`npm run  version ` 自动更新 CHANGELOG.md
+
 ## 代码静态审查
 
 1. Git hook：husky + lint-staged
@@ -105,24 +146,24 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 如果需求采用 Issues+Merge Request 来管理，每个需求一个Issue + 一个分支，开发完成后提交 Merge Request ，由项目 Owner 负责合并，项目质量将更有保障。
 
-| 级别    | 类别                       | 作用                                           | 选型                                                         | 同类                                                         |
-| ------- | -------------------------- | ---------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| -       | 静态代码审查               | 统一团队代码风格                               | [Prettier](https://github.com/prettier/prettier)             | -                                                            |
-| -       | 静态代码审查               | 现代 CSS 格式验证工具                          | [Stylelint](https://github.com/stylelint/stylelint)          | -                                                            |
-| -       | 静态代码审查               | TypeScript 格式验证工具                        | [Tslint](https://palantir.github.io/tslint/)                 | -                                                            |
-| -       | 静态代码审查               | 安全审计，依赖项跟踪                           | npm audit fix                                                | [GreenKeeper](https://github.com/greenkeeperio/greenkeeper), [Libraries.io](https://github.com/librariesio/libraries.io) |
-| 单元    | 测试框架                   | test runner, snapshots, display, and watch     | [Jest](https://jestjs.io/) 内置的 Jasmine                    | [AVA](https://github.com/avajs/ava), Mocha, Wallaby.js,      |
-| 单元    | 断言库                     | assertions functions                           | [enzyme](https://github.com/airbnb/enzyme) + Jest 的 Matchers | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai， |
-| 单元    | Mock工具                   | mocks, spies, and stubs                        | Jest 的 Mock Functions                                       | [testdouble.js](https://github.com/testdouble/testdouble.js), [sinon](http://sinonjs.org/), |
-| 单元    | 测试覆盖率工具             | code coverage                                  | Jest 内置的 Istanbul                                         | [Coveralls](https://coveralls.io/), [nyc](https://github.com/istanbuljs/nyc) |
-| 单元    | 模拟工具                   | 模拟浏览器 dom                                 | Jest 内置的 JSDOM                                            | [JsDom](https://github.com/jsdom/jsdom)                      |
-| -       | Git 提交规范化注解向导工具 | Commit 规范，生成 Change log                   | [commitlint](https://github.com/marionebl/commitlint) + [conventional-changelog](https://github.com/conventional-changelog) | [commitizen](https://github.com/commitizen/cz-cli)           |
-| -       | -                          | 与 Storybook 集成                              | -                                                            | -                                                            |
-| -       | -                          | 持续集成服务                                   | [Travis](https://travis-ci.org/)，                           | [CircleCI](https://circleci.com/), [Jenkins](https://jenkins.io/) |
-| 端到端  |                            | e2e                                            | [UI Recorder](https://github.com/alibaba/uirecorder) + [F2etest](https://github.com/alibaba/f2etest) + Docker | [Cypress](https://www.cypress.io/), [Nightwatch](http://nightwatchjs.org/), [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs) |
-| -       | -                          | -                                              | -                                                            | -                                                            |
-| ChatOps | 自动化运维                 | 查看各项指标；自动发布；发布报告等             | [Hubot](https://hubot.github.com/)                           | Lita,Err，[钉钉机器人](https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1) |
-| -       | 合规审查                   | 自动追踪开源代码的授权许可协议；开源代码合规化 | [Fossa](https://fossa.io/)                                   | -                                                            |
+| 级别    | 类别                   | 作用                                           | 选型                                                         | 同类                                                         |
+| ------- | ---------------------- | ---------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| -       | 静态代码审查           | 统一团队代码风格                               | [Prettier](https://github.com/prettier/prettier)             | -                                                            |
+| -       | 静态代码审查           | 现代 CSS 格式验证工具                          | [Stylelint](https://github.com/stylelint/stylelint)          | -                                                            |
+| -       | 静态代码审查           | TypeScript 格式验证工具                        | [Tslint](https://palantir.github.io/tslint/)                 | -                                                            |
+| -       | 静态代码审查           | 安全审计，依赖项跟踪                           | npm audit fix                                                | [GreenKeeper](https://github.com/greenkeeperio/greenkeeper), [Libraries.io](https://github.com/librariesio/libraries.io) |
+| 单元    | 测试框架               | test runner, snapshots, display, and watch     | [Jest](https://jestjs.io/) 内置的 Jasmine                    | [AVA](https://github.com/avajs/ava), Mocha, Wallaby.js,      |
+| 单元    | 断言库                 | assertions functions                           | [enzyme](https://github.com/airbnb/enzyme) + Jest 的 Matchers | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai， |
+| 单元    | Mock工具               | mocks, spies, and stubs                        | Jest 的 Mock Functions                                       | [testdouble.js](https://github.com/testdouble/testdouble.js), [sinon](http://sinonjs.org/), |
+| 单元    | 测试覆盖率工具         | code coverage                                  | Jest 内置的 Istanbul                                         | [Coveralls](https://coveralls.io/), [nyc](https://github.com/istanbuljs/nyc) |
+| 单元    | 模拟工具               | 模拟浏览器 dom                                 | Jest 内置的 JSDOM                                            | [JsDom](https://github.com/jsdom/jsdom)                      |
+| -       | Git 规范化注解向导工具 | Commit 规范，生成 Change log                   | [commitlint](https://github.com/marionebl/commitlint) + [conventional-changelog](https://github.com/conventional-changelog) | [commitizen](https://github.com/commitizen/cz-cli)           |
+| -       | -                      | 与 Storybook 集成                              | -                                                            | -                                                            |
+| -       | -                      | 持续集成服务                                   | [Travis](https://travis-ci.org/)，                           | [CircleCI](https://circleci.com/), [Jenkins](https://jenkins.io/) |
+| 端到端  |                        | e2e                                            | [UI Recorder](https://github.com/alibaba/uirecorder) + [F2etest](https://github.com/alibaba/f2etest) + Docker | [Cypress](https://www.cypress.io/), [Nightwatch](http://nightwatchjs.org/), [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs) |
+| -       | -                      | -                                              | -                                                            | -                                                            |
+| ChatOps | 自动化运维             | 查看各项指标；自动发布；发布报告等             | [Hubot](https://hubot.github.com/)                           | Lita,Err，[钉钉机器人](https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1) |
+| -       | 合规审查               | 自动追踪开源代码的授权许可协议；开源代码合规化 | [Fossa](https://fossa.io/)                                   | -                                                            |
 
 ## 最佳实践
 
