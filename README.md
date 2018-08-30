@@ -13,7 +13,7 @@
 - 代码静态审查：husky + lint-staged + tslint + prettier + stylelint + imagemin-lint-staged；
 - 测试包括：单元测试、覆盖率测试、接入集成测试服务、e2e 测试和 watch 模式，husky + lint-staged + jest。
 
-## Git 规范化注解向导工具
+## Git 规范化注解
 
 > #### Commit 规范作用
 >
