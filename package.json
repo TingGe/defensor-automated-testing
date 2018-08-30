@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "defensor-automated-testing",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React, Redux, TypeScript and Webpack starter",
   "main": "index.js",
   "repository": {
@@ -28,7 +28,8 @@
     "commitmsg": "commitlint -E GIT_PARAMS",
     "prebuild:storybook": "npm run test:generate-output",
     "build:storybook": "build-storybook -c .storybook -o build/",
-    "predeploy": "npm run build:storybook"
+    "predeploy": "npm run build:storybook",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.1.1",
@@ -46,6 +47,7 @@
     "@types/webpack-env": "^1.13.6",
     "awesome-typescript-loader": "^5.2.0",
     "compression-webpack-plugin": "^1.1.11",
+    "conventional-changelog-cli": "^2.0.5",
     "copy-webpack-plugin": "^4.5.2",
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
