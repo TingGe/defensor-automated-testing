@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NotFound NotFound render 1`] = `
+exports[`NotFound Should render NotFound correctly 1`] = `
 <span>
   404 Not Found
 </span>

@@ -11,7 +11,6 @@ yarn-error.log*
 .awcache
 .DS_Store
 .env
-.vscode/
 .chrome/
 .generate_config.json
 package-lock.json

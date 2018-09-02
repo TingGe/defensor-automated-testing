@@ -21,6 +21,7 @@
     "lint:fix": "prettier --write './src/**/*.{ts,tsx,js,scss}' && tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'",
     "test": "jest",
     "test:coverage": "jest --coverage && cat ./coverage/lcov.info && coveralls",
+    "test:createTests": "node jest/generator/index.js src/components",
     "test:update-snapshot": "jest -u",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "precommit": "lint-staged",

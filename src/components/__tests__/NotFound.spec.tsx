@@ -7,7 +7,7 @@ import NotFound from '../NotFound';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('NotFound', () => {
-  test('NotFound render', () => {
+  test('Should render NotFound correctly', () => {
     const wrapper = Enzyme.shallow(<NotFound />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });

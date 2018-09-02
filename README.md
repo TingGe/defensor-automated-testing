@@ -89,9 +89,7 @@ tslint -c tslint.json --fix './src/**/*.{js,ts,tsx}'
 
 方式一：VS Code 的 [stylelint 插件](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint)提示
 
-方式二：
-
-借助 [husky](https://github.com/typicode/husky) 在代码 commit 时代码审查（自动修复和提示）
+方式二：借助 [husky](https://github.com/typicode/husky) 在代码 commit 时代码审查（自动修复和提示）
 
 方式三：根目录执行以下命令（自动修复和提示）
 
@@ -151,7 +149,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 | -       | 静态代码审查           | 统一团队代码风格                               | [Prettier](https://github.com/prettier/prettier)             | -                                                            |
 | -       | 静态代码审查           | 现代 CSS 格式验证工具                          | [Stylelint](https://github.com/stylelint/stylelint)          | -                                                            |
 | -       | 静态代码审查           | TypeScript 格式验证工具                        | [Tslint](https://palantir.github.io/tslint/)                 | -                                                            |
-| -       | 静态代码审查           | 安全审计，依赖项跟踪                           | npm audit fix                                                | [GreenKeeper](https://github.com/greenkeeperio/greenkeeper), [Libraries.io](https://github.com/librariesio/libraries.io) |
+| -       | 静态代码审查           | 安全审计，依赖项跟踪                           | npm audit fix                                                | [jj](https://github.com/greenkeeperio/greenkeeper), [Libraries.io](https://github.com/librariesio/libraries.io) |
 | 单元    | 测试框架               | test runner, snapshots, display, and watch     | [Jest](https://jestjs.io/) 内置的 Jasmine                    | [AVA](https://github.com/avajs/ava), Mocha, Wallaby.js,      |
 | 单元    | 断言库                 | assertions functions                           | [enzyme](https://github.com/airbnb/enzyme) + Jest 的 Matchers | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai， |
 | 单元    | Mock工具               | mocks, spies, and stubs                        | Jest 的 Mock Functions                                       | [testdouble.js](https://github.com/testdouble/testdouble.js), [sinon](http://sinonjs.org/), |
@@ -160,7 +158,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 | -       | Git 规范化注解向导工具 | Commit 规范，生成 Change log                   | [commitlint](https://github.com/marionebl/commitlint) + [conventional-changelog](https://github.com/conventional-changelog) | [commitizen](https://github.com/commitizen/cz-cli)           |
 | -       | -                      | 与 Storybook 集成                              | -                                                            | -                                                            |
 | -       | -                      | 持续集成服务                                   | [Travis](https://travis-ci.org/)，                           | [CircleCI](https://circleci.com/), [Jenkins](https://jenkins.io/) |
-| 端到端  |                        | e2e                                            | [UI Recorder](https://github.com/alibaba/uirecorder) + [F2etest](https://github.com/alibaba/f2etest) + Docker | [Cypress](https://www.cypress.io/), [Nightwatch](http://nightwatchjs.org/), [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs) |
+| 端到端  |                        | e2e                                            | [UI Recorder](https://github.com/alibaba/uirecorder) + [F2etest](https://github.com/alibaba/f2etest) + Docker | [Cypress](https://www.cypress.io/), [Nightwatch](http://nightwatchjs.org/), [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), testcafe, [DalekJS](https://github.com/dalekjs), [testwise-recorder](https://github.com/testwisely/testwise-recorder) |
 | -       | -                      | -                                              | -                                                            | -                                                            |
 | ChatOps | 自动化运维             | 查看各项指标；自动发布；发布报告等             | [Hubot](https://hubot.github.com/)                           | Lita,Err，[钉钉机器人](https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1) |
 | -       | 合规审查               | 自动追踪开源代码的授权许可协议；开源代码合规化 | [Fossa](https://fossa.io/)                                   | -                                                            |
@@ -173,7 +171,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 1. 配置 `template.spec.tsx` 测试模版，变量部分以占位符方式预留
 2. 扫描 components 目录 `**/*.tsx` 文件
-3. 判断同目录下是否有 `__test__` 目录，如有则忽略；否则，创建 `__test__` 目录，并以匹配到的 `.tsx` 文件名在 `__test__` 目录创建对应`.spec.tsx` ，内容用替换占位符后的 `template.spec.tsx` 。
+3. 判断同目录下是否有 `__tests__` 目录，如有则忽略；否则，创建 `__tests__` 目录，并以匹配到的 `.tsx` 文件名在 `__tests__` 目录创建对应`.spec.tsx` ，内容用替换占位符后的 `template.spec.tsx` 。
 
 ## 踩过的坑
 
