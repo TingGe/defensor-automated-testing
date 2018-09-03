@@ -8,7 +8,7 @@ cache:
 before_install:
   - npm install
 script:
-  # - npm run dev
+  - npm run test:coverage
   - npm run build
 after_script:
-  - npm run test:coverage
+  - npm run coverage
