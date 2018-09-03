@@ -20,4 +20,6 @@ module.exports = {
     '!**/node_modules/**',
     '!**/**/*.d.ts',
   ],
+  "coverageDirectory": "./coverage/",
+  "collectCoverage": true
 };
