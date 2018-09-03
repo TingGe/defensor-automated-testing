@@ -52,7 +52,7 @@
 ### 执行方式
 
 - 校验 commit 规范：借助 [husky](https://github.com/typicode/husky) 在 commit 时自动校验。
-- 生成 Change log：`npm run  version ` 自动更新 CHANGELOG.md
+- 生成 Change log：`npm run version ` 自动更新 CHANGELOG.md
 
 ## 代码静态审查
 
