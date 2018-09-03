@@ -121,7 +121,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 5. React + Redux 测试
 6. 覆盖率和输出报告
 
-### E2E 测试
+### E2E 测试：Defensor E2E Testing
 
 > 可独立于项目代码。支持本地运行、手工触发、定时触发、发布流程触发四种方式，实现业务流程的快速自动回归测试。
 
@@ -157,7 +157,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 | -       | Git 规范化注解向导工具 | Commit 规范，生成 Change log                   | [commitlint](https://github.com/marionebl/commitlint) + [conventional-changelog](https://github.com/conventional-changelog) | [commitizen](https://github.com/commitizen/cz-cli), [semantic-release](https://github.com/semantic-release/semantic-release) |
 | -       | -                      | 与 Storybook 集成                              | -                                                            | -                                                            |
 | -       | -                      | 持续集成服务                                   | [CircleCI](https://circleci.com/)                            | [Jenkins](https://jenkins.io/), [Travis](https://travis-ci.org/) |
-| 端到端  |                        | e2e                                            | [UI Recorder](https://github.com/alibaba/uirecorder) + [F2etest](https://github.com/alibaba/f2etest) + Docker | [Cypress](https://www.cypress.io/), [Nightwatch](http://nightwatchjs.org/), [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), [testcafe](https://github.com/DevExpress/testcafe), [DalekJS](https://github.com/dalekjs), [testwise-recorder](https://github.com/testwisely/testwise-recorder),[Puppeteer Recorder](https://github.com/checkly/puppeteer-recorder) + [Puppeteer](https://github.com/GoogleChrome/puppeteer) |
+| 端到端  |                        | e2e                                            | [Defensor E2E Testing](https://github.com/TingGe/defensor-e2e-testing) | [Cypress](https://www.cypress.io/), [Nightwatch](http://nightwatchjs.org/), [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), [testcafe](https://github.com/DevExpress/testcafe), [DalekJS](https://github.com/dalekjs), [testwise-recorder](https://github.com/testwisely/testwise-recorder),[Puppeteer Recorder](https://github.com/checkly/puppeteer-recorder) + [Puppeteer](https://github.com/GoogleChrome/puppeteer) |
 | -       | -                      | -                                              | -                                                            | -                                                            |
 | ChatOps | 自动化运维             | 查看各项指标；自动发布；发布报告等             | [Hubot](https://hubot.github.com/)                           | Lita,Err，[钉钉机器人](https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1) |
 | -       | 合规审查               | 自动追踪开源代码的授权许可协议；开源代码合规化 | [Fossa](https://fossa.io/)                                   | -                                                            |
