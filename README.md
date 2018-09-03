@@ -165,13 +165,8 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 ## 最佳实践
 
-### Todo： 
+- 通过  `npm run test:createTests` ，批量自动化生成单元测试代码
 
-自动化生成单元测试代码思路，可通过 generator 方式批量生成。以下是批处理 js 脚本的流程：
-
-1. 配置 `template.spec.tsx` 测试模版，变量部分以占位符方式预留
-2. 扫描 components 目录 `**/*.tsx` 文件
-3. 判断同目录下是否有 `__tests__` 目录，如有则忽略；否则，创建 `__tests__` 目录，并以匹配到的 `.tsx` 文件名在 `__tests__` 目录创建对应`.spec.tsx` ，内容用替换占位符后的 `template.spec.tsx` 。
 
 ## 踩过的坑
 
