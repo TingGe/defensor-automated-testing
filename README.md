@@ -109,7 +109,7 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 本项目采用的自动化测试技术方案
 
 1. React Redux 测试：typescript + Jest + enzyme 组合
-2. 集成测试： [UI Recorder](https://github.com/alibaba/uirecorder)
+2. 集成测试： [Defensor E2E Testing](https://github.com/TingGe/defensor-e2e-testing)
 
 
 ### 组件：React  + Redux
