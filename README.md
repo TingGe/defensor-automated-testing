@@ -184,8 +184,13 @@ GITHUB上的小工具，大概分成这么几类：代码质量、持续集成�
 
 ## 参考
 
-- [代码自动化扫描系统的建设](https://www.anquanke.com/post/id/158929)
+- [议题解读《我的Web应用安全模糊测试之路》](https://www.anquanke.com/post/id/152729)
+- [开发要不要自己做测试？怎么做？](https://mp.weixin.qq.com/s?__biz=MzIzNjUxMzk2NQ==&mid=2247489501&idx=2&sn=fb233a9dcedbecb385cc828f2117b657&chksm=e8d7e81fdfa061098b6d4ec40d6a8aa63395b25af681fcf0faf9f2519bfeed053dc4a80bb124&scene=27#wechat_redirect)
 
+
+- [入门：前端自动化测试karma，Backstopjs，Selenium-webdriver，Moch](https://juejin.im/post/5b13526d6fb9a01e831461e6)
+
+- [代码自动化扫描系统的建设](https://www.anquanke.com/post/id/158929)
 - [你可能会忽略的 Git 提交规范](http://jartto.wang/2018/07/08/git-commit/)
 - [使用Jest进行React单元测试](https://www.codetd.com/article/2675508)
 - [聊聊前端开发的测试](https://www.diycode.cc/topics/716)
