@@ -184,6 +184,7 @@ GITHUB上的小工具，大概分成这么几类：代码质量、持续集成�
 
 ## 参考
 
+- [Wings-让单元测试智能全自动生成](http://www.threadingtest.com/newstest/Wings%E5%8F%91%E5%B8%83-%E8%AE%A9%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%99%BA%E8%83%BD%E5%85%A8%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90.html)
 - [议题解读《我的Web应用安全模糊测试之路》](https://www.anquanke.com/post/id/152729)
 - [开发要不要自己做测试？怎么做？](https://mp.weixin.qq.com/s?__biz=MzIzNjUxMzk2NQ==&mid=2247489501&idx=2&sn=fb233a9dcedbecb385cc828f2117b657&chksm=e8d7e81fdfa061098b6d4ec40d6a8aa63395b25af681fcf0faf9f2519bfeed053dc4a80bb124&scene=27#wechat_redirect)
 
