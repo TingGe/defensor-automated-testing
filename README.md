@@ -110,11 +110,11 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 本项目采用的自动化测试技术方案
 
-1. React Redux 测试：typescript + Jest + enzyme 组合
+1. React Redux 测试：Typescript + Jest + Enzyme 组合
 2. 集成测试： [Defensor E2E Testing](https://github.com/TingGe/defensor-e2e-testing)
 
 
-### 组件：React  + Redux
+### 组件测试：Typescript + Jest + Enzyme 组合
 
 1. 支持 watch 模式
 2. actions 测试
@@ -125,13 +125,23 @@ npx stylelint -s scss --fix --stdin-filename ./(src|docs)/**/*.scss
 
 ### E2E 测试：Defensor E2E Testing
 
-> 可独立于项目代码。支持本地运行、手工触发、定时触发、发布流程触发四种方式，实现业务流程的快速自动回归测试。
+> 可独立于项目代码。支持本地运行、手工触发、定时触发、发布流程触发四种方式，实现业务逻辑的持续测试。
 
 1. 跨端（多浏览器兼容）自动化测试及报告： [UI Recorder](https://github.com/alibaba/uirecorder)、[F2etest](https://github.com/alibaba/f2etest) 
 2. 测试脚本：测试代码的 Github 仓库
-3. 持续集成（CI）服务、用例、测试计划、任务分派和缺陷管理：Aone
-4. 全球化（G11N）自动测试报告：ACGT
-5. 容器化： Docker
+3. 用例、测试计划、任务分派和缺陷管理：Aone
+4. 持续集成（CI）服务：Aone 实验室 CISE
+5. 全球化（G11N）自动测试报告：ACGT
+6. 测试简报、测试计划进度跟踪、待修复缺陷跟踪：OneShot 截屏服务/爬虫服务 + 钉钉群机器人
+7. 容器化： Docker/Kubernetes 编排技术实现的 Selenium Grid
+8. 徽章服务：Aone badge
+9. 多环境管理和健康大盘Chrome扩展：[defensor-multi-environment-manager](https://github.com/TingGe/defensor-multi-environment-manager)
+10. 线上巡检：（可配合线上监控系统和报告数据实现可视化）
+
+## 其他辅助工具
+
+1. 快速应用 CLI 工具：[defensor-cli](https://github.com/TingGe/defensor-cli)
+2. 命令行工具，主要用于 Newsletter 等群发通知：[defensor-node-cli-broadcast](https://github.com/TingGe/defensor-node-cli-broadcast)
 
 ## 对比的一些工具
 
@@ -153,6 +163,7 @@ GITHUB上的小工具，大概分成这么几类：代码质量、持续集成�
 | -       | 静态代码审查           | 现代 CSS 格式验证工具                                        | [Stylelint](https://github.com/stylelint/stylelint)          | -                                                            |
 | -       | 静态代码审查           | TypeScript 格式验证工具                                      | [Tslint](https://palantir.github.io/tslint/)                 | -                                                            |
 | -       | 静态代码审查           | 安全审计，依赖项跟踪                                         | npm audit fix                                                | [jj](https://github.com/greenkeeperio/greenkeeper), [Libraries.io](https://github.com/librariesio/libraries.io) |
+| -       | 静态代码审查           | 可访问性、性能和安全的开源检查（Linting）工具                | -                                                            | [Webhint](https://github.com/webhintio/hint)                 |
 | -       | 代码质量管理平台       | 集成不同的测试工具，代码分析工具，持续集成工具等。自动 Code Review  辅助 | [SonarQube](https://github.com/SonarSource/sonarqube) + [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode) | [CodeBeat](https://codebeat.co/), [Codacy](https://github.com/codacy), [Code Climat](https://github.com/codeclimate/codeclimate) |
 | 单元    | 测试框架               | test runner, snapshots, display, and watch                   | [Jest](https://jestjs.io/) 内置的 Jasmine                    | [AVA](https://github.com/avajs/ava), Mocha, Wallaby.js,      |
 | 单元    | 断言库                 | assertions functions                                         | [enzyme](https://github.com/airbnb/enzyme) + Jest 的 Matchers | [Unexpected](https://github.com/unexpectedjs/unexpected), Chai， |
@@ -164,7 +175,7 @@ GITHUB上的小工具，大概分成这么几类：代码质量、持续集成�
 | -       | -                      | 持续集成服务                                                 | [CircleCI](https://circleci.com/)                            | [Jenkins](https://jenkins.io/), [Travis](https://travis-ci.org/), [Hound](https://houndci.com/) |
 | 端到端  |                        | e2e                                                          | [Defensor E2E Testing](https://github.com/TingGe/defensor-e2e-testing) | [Cypress](https://www.cypress.io/), [Nightwatch](http://nightwatchjs.org/), [Protractor](http://www.protractortest.org/), [Casper](http://casperjs.org/), [testcafe](https://github.com/DevExpress/testcafe), [DalekJS](https://github.com/dalekjs), [testwise-recorder](https://github.com/testwisely/testwise-recorder),[Puppeteer Recorder](https://github.com/checkly/puppeteer-recorder) + [Puppeteer](https://github.com/GoogleChrome/puppeteer) |
 | -       | -                      | -                                                            | -                                                            | -                                                            |
-| ChatOps | 自动化运维             | 查看各项指标；自动发布；发布报告等                           | [Hubot](https://hubot.github.com/)                           | Lita,Err，[钉钉机器人](https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1) |
+| ChatOps | 自动化运维             | 查看各项指标；自动发布；发布报告等                           | [钉钉机器人](https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1) | Lita,Err, [Hubot](https://hubot.github.com/)                 |
 | -       | 合规审查               | 自动追踪开源代码的授权许可协议；开源代码合规化               | [Fossa](https://fossa.io/)                                   | -                                                            |
 
 ## 最佳实践
